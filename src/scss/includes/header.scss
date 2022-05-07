@@ -1,3 +1,48 @@
+.header {
+    height: 86px;
+    // .header__container
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px 40px;
+    }
+    // .header__link
+    &__logo {
+        margin-bottom: -7px;
+    }
+    &__logo-image {
+    }
+    // .header__menu
+    &__menu {
+        flex-grow: 1; // .menu__item
+        .menu__list {
+            display: flex;
+            justify-content: end;
+        }
+        .menu__link {
+            border-bottom: 2px solid transparent;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $lightBlue;
+                    border-color: $lightBlue;
+                }
+            }
+        }
+    }
+    // .header__social-list
+    &__social-list {
+        color: $darkGray;
+        .social-list__link {
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $darkGrayHover;
+                }
+            }
+        }
+    }
+}
+
 .icon-menu {
     display: none;
     @media (max-width: $phone + px) {
