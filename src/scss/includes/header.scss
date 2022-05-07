@@ -1,0 +1,47 @@
+.icon-menu {
+    display: none;
+    @media (max-width: $phone + px) {
+        display: block;
+        position: relative;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
+        cursor: pointer;
+        margin-right: 17px;
+        z-index: 5;
+        span,
+        &::before,
+        &::after {
+            content: "";
+            @include transition;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - 1px);
+        }
+        .menu--open & {
+            span {
+                transform: scale(0);
+            }
+            &::before {
+                transform: rotate(-45deg);
+                top: calc(50% - 1px);
+            }
+            &::before {
+                transform: rotate(45deg);
+                top: calc(50% - 1px);
+            }
+        }
+    }
+}

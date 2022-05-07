@@ -1,0 +1,136 @@
+@use "sass:math";
+@import "variables";
+@import "common/mixins";
+@import "common/reset";
+
+$fontFamily: Raleway;
+$fontSize: 14;
+$minFontSize: 16;
+$lineHeight: 24; // 1.7
+$background: #fff;
+$mainTextColor: #000;
+$darkBlue: #073773;
+
+$upperHeaderColor: $mainTextColor;
+$upperHeaderBg: #fdfdfd;
+$mainHeaderColor: #fff;
+
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1235;
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+// 1 no breakpoins
+// 2 with breakpoints
+$responsiveType: 1;
+$pc: $maxWidthContainer + 12;
+$tablet: 991.98; // tablets, phones horizontally
+$phone: 767.98; // L phones
+$smallPhone: 479.98; // S phones
+
+html {
+   scroll-behavior: smooth;
+}
+body {
+   font-family: $fontFamily;
+   @include avalue("font-size", $fontSize, $minFontSize);
+   line-height: math.div($lineHeight, $fontSize);
+   font-weight: 500;
+   color: $mainTextColor;
+   background-color: $background;
+   &._lock {
+      overflow: hidden;
+   }
+}
+
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   &._loaded {
+   }
+   > main {
+      // footer to the floor
+      flex: 1 1 auto;
+   }
+   // fixing sliders
+   > * {
+      min-width: 0;
+   }
+}
+._container {
+   max-width: $maxWidthContainer + 15 + px;
+   margin: 0 auto;
+   padding: 0 15px;
+   // @media (max-width: $md1 + px) {
+   //     max-width: 970px;
+   // }
+   // @media (max-width: $md2 + px) {
+   //     max-width: 750px;
+   // }
+   // @media (max-width: $md3 + px) {
+   //     max-width: none;
+   //     padding: 0 10px;
+   // }
+}
+._padded-container {
+   @include avalue("padding-left", 24, 14);
+   @include avalue("padding-right", 24, 14);
+}
+@if ($responsiveType == 1) {
+   [class*="__container"]/*,
+    [class*="-container"]*/ {
+      @if ($maxWidthContainer > 0) {
+         max-width: $maxWidthContainer + px;
+         box-sizing: content-box;
+         margin: 0 auto;
+      }
+      @if ($containerPadding > 0) {
+         padding: 0 math.div($containerPadding, 2) + px;
+      }
+   }
+} @else if ($responsiveType == 2) {
+   [class*="__container"],
+   [class*="-container"] {
+      margin: 0 auto;
+      @if ($maxWidthContainer > 0) {
+         max-width: $maxWidthContainer;
+         box-sizing: content-box;
+      } @else {
+         @if ($containerPadding > 0) {
+            padding: 0 math.div($container-padding, 2) + px;
+         }
+      }
+      @media (max-width: $pc + px) {
+         max-width: 970px;
+      }
+      @media (max-width: $tablet + px) {
+         max-width: 750px;
+      }
+      @media (max-width: $phone + px) {
+         max-width: none;
+         @if ($containerPadding > 0 and $maxWidthContainer > 0) {
+            padding: 0 math.div($containerPadding, 2) + px;
+         }
+      }
+   }
+} @else {
+   @error "Unknown responsiveType: '" + $responsiveType + "'";
+}
+.page {
+   flex: 1 1 auto;
+   flex-direction: column;
+   @media (max-width: $phone + px) {
+   }
+}
+._page-section {
+   @include avalue("margin-top", 60, 30);
+   @include avalue("margin-bottom", 60, 30);
+}
+.popups {
+   display: none;
+}
+@import "common/*";
+@import "includes/*";
