@@ -48,7 +48,7 @@
     opacity: 0;
     position: fixed;
 
-    @include afont(16, 14);
+    @include avalue("font", 16, 14);
     line-height: math.div(22, 16);
     &--open {
         position: fixed;
