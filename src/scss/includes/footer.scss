@@ -24,16 +24,26 @@
         margin-bottom: 10px;
         @include size(185, 45);
         display: block;
+        @media (max-width: 600 + px) {
+            margin-bottom: 0;
+        }
     }
     // .footer__menu
     &__menu {
         margin-bottom: 30px;
+        max-width: 75%;
+        @media (max-width: $phone + px) {
+            // display: none;
+        }
     }
     // .footer__contacts
     &__contacts {
         max-width: 170px;
         font-size: 11px;
         line-height: math.div(13, 11);
+        @media (max-width: $smallPhone + px) {
+            // display: none;
+        }
     }
     // .footer__address
     &__address {
@@ -47,9 +57,11 @@
         align-items: end;
         justify-content: space-between;
         gap: 15px 30px;
+        flex-wrap: wrap;
     }
     &__email {
         display: block;
+        margin-top: 10px;
     }
     &__phone {
         display: block;
@@ -59,8 +71,10 @@
         flex-grow: 1;
         font-size: 8px;
         line-height: math.div(9, 8);
-        display: flex;
-        justify-content: end;
+        text-align: right;
+        @media (max-width: $phone + px) {
+            text-align: left;
+        }
     }
     // .footer__socials
     &__socials {
