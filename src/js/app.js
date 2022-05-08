@@ -3,9 +3,12 @@ import { initSliders } from "./swiper.js"
 
 functions.isWebp()
 
-// import { DynamicAdapt } from "./modules/dynamic-adapt.js"
-// const da = new DynamicAdapt("max")
-// da.init()
+import { burger } from "./modules/burger.js"
+burger()
+
+import { DynamicAdapt } from "./modules/dynamic-adapt.js"
+const da = new DynamicAdapt("max")
+da.init()
 
 // document.addEventListener("DOMContentLoaded", function () {
 //    initSliders()

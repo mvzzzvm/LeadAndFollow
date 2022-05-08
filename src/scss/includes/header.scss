@@ -1,5 +1,10 @@
 .header {
-    height: 86px;
+    @include avalue("height", 86, 41);
+    padding-top: 15px;
+    position: relative;
+    @media (max-width: $phone + px) {
+        padding-top: 4px;
+    }
     // .header__container
     &__container {
         display: flex;
@@ -10,6 +15,12 @@
     // .header__link
     &__logo {
         margin-bottom: -7px;
+        @include avalue("width", 328, 132);
+        // @include avalue("height", 80, 32);
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
     &__logo-image {
     }
@@ -17,11 +28,41 @@
     &__menu {
         flex-grow: 1; // .menu__item
         .menu__list {
-            display: flex;
             justify-content: end;
+            @media (max-width: $phone + px) {
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                position: relative;
+                padding-bottom: 40px;
+                margin-bottom: 24px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 36px;
+                    background: no-repeat url(../../img/header/gradient-line.svg);
+                }
+            }
+        }
+        .menu__item {
         }
         .menu__link {
             border-bottom: 2px solid transparent;
+            @media (max-width: $phone + px) {
+                padding: 10px 0;
+                display: block;
+                border-color: transparent;
+            }
+            &--active {
+                color: $lightBlue;
+                border-color: $lightBlue;
+                @media (max-width: $phone + px) {
+                    border-color: transparent;
+                }
+            }
             @media (any-hover: hover) {
                 &:hover {
                     color: $lightBlue;
@@ -30,6 +71,7 @@
             }
         }
     }
+
     // .header__social-list
     &__social-list {
         color: $darkGray;
@@ -40,19 +82,59 @@
                 }
             }
         }
+        @media (max-width: $phone  + px) {
+            margin-left: auto;
+        }
+        @media (max-width: 500 + px) {
+            margin: 0 auto;
+            column-gap: 40px;
+        }
+    }
+    // .header__navigation
+    &__navigation {
+        position: absolute;
+        padding: 40px 0 40px 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: translate(-100%, 100%);
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        z-index: 10;
+        &:before {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translate(0, 100%);
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(#000, 0.5);
+            z-index: 100;
+        }
     }
 }
-
+.menu--open {
+    overflow: hidden;
+    header {
+        font-size: 18px;
+    }
+    .header__navigation {
+        transform: translate(0%, 100%);
+        &::before {
+            content: "";
+        }
+    }
+}
 .icon-menu {
     display: none;
     @media (max-width: $phone + px) {
         display: block;
         position: relative;
-        width: 28px;
-        height: 28px;
-        flex: 0 0 28px;
+        @include size(30, 15);
+        flex: 0 0 30px;
         cursor: pointer;
-        margin-right: 17px;
         z-index: 5;
         span,
         &::before,
@@ -60,17 +142,18 @@
             content: "";
             @include transition;
             position: absolute;
-            left: 0;
+            right: 0;
             width: 100%;
-            height: 3px;
-            border-radius: 10px;
-            background-color: #fff;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $darkBlue;
         }
         &::before {
             top: 0;
         }
         &::after {
             bottom: 0;
+            width: pc(21, 30);
         }
         span {
             top: calc(50% - 1px);
@@ -83,9 +166,10 @@
                 transform: rotate(-45deg);
                 top: calc(50% - 1px);
             }
-            &::before {
+            &::after {
                 transform: rotate(45deg);
                 top: calc(50% - 1px);
+                width: 100%;
             }
         }
     }

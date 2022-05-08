@@ -3,13 +3,13 @@
         <a href="/" class="header__logo">
             <img src="@img/header/logo.svg" class="header__logo-image" alt="Lead & Follow Dance Studio">
         </a>
-        <nav class="header__menu menu">
+        <nav class="header__menu menu" data-da=".header__navigation,768,first">
             <ul class="menu__list">
                 <li class="menu__item">
                     <a href="!#" class="menu__link">about us</a>
                 </li>
                 <li class="menu__item">
-                    <a href="!#" class="menu__link">News</a>
+                    <a href="!#" class="menu__link menu__link--active">News</a>
                 </li>
                 <li class="menu__item">
                     <a href="!#" class="menu__link">Classes</a>
@@ -25,7 +25,7 @@
                 </li>
             </ul>
         </nav>
-        <ul class="header__social-list social-list">
+        <ul class="header__social-list social-list" data-da=".header__navigation,500,last">
             <li class="social-list__item">
                 <a href="!#" class="social-list__link _icon-youtube"></a>
             </li>
@@ -36,5 +36,9 @@
                 <a href="!#" class="social-list__link _icon-instagram"></a>
             </li>
         </ul>
+        <div class="icon-menu">
+            <span></span>
+        </div>
+        <div class="header__navigation"></div>
     </div>
 </header>
