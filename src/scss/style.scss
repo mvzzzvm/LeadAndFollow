@@ -23,9 +23,9 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 // 2 with breakpoints
 $responsiveType: 1;
 $pc: $maxWidthContainer + 12;
-$tablet: 991.98; // tablets, phones horizontally
-$phone: 767.98; // L phones
-$smallPhone: 479.98; // S phones
+$tablet: 992; // tablets, phones horizontally
+$phone: 768; // L phones
+$smallPhone: 480; // S phones
 
 html {
     scroll-behavior: smooth;
