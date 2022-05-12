@@ -10,9 +10,9 @@ import { DynamicAdapt } from "./modules/dynamic-adapt.js"
 const da = new DynamicAdapt("max")
 da.init()
 
-// document.addEventListener("DOMContentLoaded", function () {
-//    initSliders()
-// })
+document.addEventListener("DOMContentLoaded", function () {
+    initSliders()
+})
 
 // import { hideAndToggle } from "./modules/hider-and-toggler.js"
 // hideAndToggle()

@@ -35,48 +35,6 @@ address {
 [data-spoiler] {
     cursor: pointer;
 }
-[class*="image-sprite"] {
-    display: none;
-}
-[class*="__title"] {
-    @include avalue("font-size", 40, 20);
-    line-height: math.div(49, 40);
-    font-weight: 600;
-    @include avalue("margin-bottom", 50, 30);
-}
-[class*="__title--smaller"] {
-    @include avalue("font-size", 26, 20);
-    line-height: 1.4;
-    font-weight: 600;
-}
-[class*="main-text"] {
-    font-size: rem(20);
-    line-height: 1.5;
-    font-weight: 500;
-    p {
-        &:not(:last-child) {
-            margin-bottom: em(15, 20);
-        }
-    }
-    @media (max-width: 660px) {
-        font-size: rem(16);
-        font-weight: 400;
-        line-height: 1.4;
-        flex: 0 0 100%;
-        p {
-            &:not(:last-child) {
-                margin-bottom: em(10, 16);
-            }
-        }
-    }
-}
-[class*="right-col"] {
-    padding-left: rem(65);
-    flex: 0 0 pc(550 + 65, $maxWidthContainer);
-    @media (max-width: 767px) {
-        padding-left: 0;
-    }
-}
 
 [class*="__input"] {
     transition: border-color 0.15s;
@@ -103,7 +61,33 @@ address {
 ::selection {
     background-color: #fcf37a;
 }
-
+._light-button {
+    @extend %button;
+    color: $lightBlue;
+    background-color: #fff;
+}
+._dark-button {
+    @extend %button;
+    background: linear-gradient(75.62deg, #009ee2 7.02%, #273992 91.67%);
+    color: #fff;
+}
+%button {
+    // height: 60px; // 25
+    font-family: Raleway;
+    @include avalue("font-size", 16, 10);
+    line-height: math.div(19, 16);
+    font-weight: 700;
+    @include aminvalue("padding-top", 13, 10, 320);
+    @include aminvalue("padding-top", 24, 13, $phone);
+    @include aminvalue("padding-bottom", 13, 10, 320);
+    @include aminvalue("padding-bottom", 24, 13, $phone);
+    @include aminvalue("padding-left", 25, 20, 320);
+    @include aminvalue("padding-left", 70, 25, $phone);
+    @include aminvalue("padding-right", 25, 20, 320);
+    @include aminvalue("padding-right", 70, 25, $phone);
+    border-radius: 60px;
+    text-transform: uppercase;
+}
 .menu {
     &__list {
         display: flex;
