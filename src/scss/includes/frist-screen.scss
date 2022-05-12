@@ -1,6 +1,6 @@
-.about-us {
+.first-screen {
     overflow: hidden;
-    // .about-us__container
+    // .first-screen__container
     &__container {
         // width: 1440px;
         height: 636px;
@@ -13,7 +13,7 @@
             height: 280px;
         }
     }
-    // .about-us__start-block
+    // .first-screen__start-block
     &__start-block {
         position: absolute;
         top: 147px;
@@ -49,7 +49,7 @@
             top: 10px;
         }
     }
-    // .about-us__title
+    // .first-screen__title
     &__title {
         font-family: PhillippScript;
         @include aminvalue("font-size", 24, 18, 320);
@@ -60,7 +60,7 @@
             margin-bottom: 10px;
         }
     }
-    // .about-us__sub-title
+    // .first-screen__sub-title
     &__sub-title {
         @include aminvalue("font-size", 12, 10, 320);
         @include aminvalue("font-size", 20, 12, $phone);
@@ -74,10 +74,10 @@
             margin-bottom: 10px;
         }
     }
-    // .about-us__start-button
+    // .first-screen__start-button
     &__start-button {
     }
-    // .about-us__slider
+    // .first-screen__slider
     &__slider {
         position: absolute;
         top: 0;
@@ -104,26 +104,27 @@
             right: 0;
             bottom: -114px;
             height: 366px;
-            background: center top no-repeat url(../../img/about-us/gradient-line.svg);
+            background: center top no-repeat url(../../img/first-screen/gradient-line.svg);
             z-index: 1;
             overflow: hidden;
             @media (max-width: $phone + px) {
                 bottom: -229px;
                 width: 100%;
-                background: center top no-repeat url(../../img/about-us/gradient-line-tablet.svg);
+                background: center top no-repeat
+                    url(../../img/first-screen/gradient-line-tablet.svg);
             }
             @media (max-width: 600 + px) {
                 bottom: -229px;
                 width: 100%;
                 background: center top / 100% 162px no-repeat
-                    url(../../img/about-us/gradient-line-phone.svg);
+                    url(../../img/first-screen/gradient-line-phone.svg);
             }
             @media (max-width: 600 + px) {
                 height: 340px;
             }
         }
     }
-    // .about-us__thumb-slider
+    // .first-screen__thumb-slider
     &__thumbs-slider {
         overflow: hidden;
         position: absolute;

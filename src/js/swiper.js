@@ -40,8 +40,8 @@ const mainSwiperOptions = {
 }
 
 export function initSliders() {
-    const mainSlider = document.querySelector(".about-us__slider")
-    const thumbsSlider = document.querySelector(".about-us__thumbs-slider")
+    const mainSlider = document.querySelector(".first-screen__slider")
+    const thumbsSlider = document.querySelector(".first-screen__thumbs-slider")
     if (mainSlider && thumbsSlider) {
         const thumbsOptions = {
             modules: [Controller],
