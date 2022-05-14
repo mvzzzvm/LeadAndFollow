@@ -88,6 +88,35 @@ address {
     border-radius: 60px;
     text-transform: uppercase;
 }
+._arrow-button {
+    text-transform: uppercase;
+    color: $darkBlue;
+    font-weight: 700;
+    @include aminvalue("font-size", 16, 12, $phone);
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media (max-width: $phone + px) {
+        font-size: 10px;
+    }
+    span {
+        margin-left: -10px;
+    }
+    &::before {
+        content: "\e900";
+        @include aminvalue("font-size", 34, 20, $phone);
+        @include aminvalue("height", 98, 58, $phone);
+        @include aminvalue("width", 98, 58, $phone);
+        border-radius: 50%;
+        @extend %ic;
+        @include flex-center;
+        background: center / contain no-repeat url(../../img/incomplete-circle.png);
+        @media (max-width: $phone + px) {
+            @include size(50);
+            font-size: 17px;
+        }
+    }
+}
 .menu {
     &__list {
         display: flex;
