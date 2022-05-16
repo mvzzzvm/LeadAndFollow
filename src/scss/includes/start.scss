@@ -1,0 +1,72 @@
+.start {
+    margin-top: 120px;
+    position: relative;
+    @media (max-width: $smallPhone + px) {
+        margin-top: 80px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        transform: translate(-50%, -28%);
+        background: center top / cover no-repeat url(../../img/start/fabric-bg-2.jpg);
+        @media (max-width: $smallPhone + px) {
+            transform: translate(-50%, -20%);
+        }
+    }
+    // .start__container
+    &__container {
+        @media (max-width: $phone + px) {
+            overflow-x: clip;
+        }
+    }
+    // .start-block
+    &__start-block {
+        @include aminvalue("width", 360, 294, 320);
+        @include aminvalue("width", 457, 360, $phone);
+        @include aminvalue("height", 360, 294, 320);
+        @include aminvalue("height", 457, 360, $phone);
+        margin: 0 auto;
+        background: linear-gradient(75.62deg, #009ee2 7.02%, #273992 91.67%);
+        &::before {
+            width: pc(396, 457);
+            height: pc(482, 457);
+            transform: translate(-50%, -50%) rotate(98.8deg);
+        }
+        &::after {
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -50%);
+            @extend %blurry-dot;
+            z-index: -2;
+        }
+        .start-block__title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+            @include aminvalue("font-size", 40, 30, 320);
+            @include aminvalue("font-size", 52, 40, $phone);
+            @media (max-width: $phone + px) {
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+            @media (max-width: $smallPhone + px) {
+                // margin-top: 25px;
+            }
+        }
+        .start-block__start-button {
+            @include aminvalue("padding-top", 19, 15, 320);
+            @include aminvalue("padding-top", 24, 19, $phone);
+            @include aminvalue("padding-bottom", 19, 15, 320);
+            @include aminvalue("padding-bottom", 24, 19, $phone);
+            @include aminvalue("padding-left", 57, 45, 320);
+            @include aminvalue("padding-left", 70, 57, $phone);
+            @include aminvalue("padding-right", 57, 45, 320);
+            @include aminvalue("padding-right", 70, 57, $phone);
+        }
+    }
+}
