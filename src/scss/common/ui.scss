@@ -151,7 +151,7 @@ address {
     font-weight: 400;
     font-size: 180px;
     line-height: math.div(213, 180);
-    @include aminvalue("font-size", 180, 120, $tablet);
+    @include aminvalue("font-size", 180, 120, $phone);
     @include aminvalue("font-size", 120, 60, 320);
     text-align: center;
     color: $darkBlue;
