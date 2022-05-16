@@ -16,26 +16,10 @@
     // .first-screen__start-block
     &__start-block {
         position: absolute;
-        top: 147px;
         top: pc(147, 636);
         left: -75px;
-        @include aminvalue("width", 212, 168, 320);
-        @include aminvalue("width", 390, 212, $phone);
-        @include aminvalue("height", 212, 168, 320);
-        @include aminvalue("height", 390, 212, $phone);
         background-color: #fff;
-        border-radius: 50%;
-        @include flex-center;
-        flex-direction: column;
-        z-index: 5;
-        text-align: center;
         &::before {
-            content: "";
-            width: pc(349, 390);
-            height: pc(433, 390);
-            @include abs-center;
-            border: 3px solid $lightBlue;
-            border-radius: 50%;
             transform: translate(-50%, -50%) rotate(20.83deg);
         }
         @media (max-width: 1440 + px) {
@@ -51,10 +35,6 @@
     }
     // .first-screen__title
     &__title {
-        font-family: PhillippScript;
-        @include aminvalue("font-size", 24, 18, 320);
-        @include aminvalue("font-size", 52, 24, $phone);
-        line-height: math.div(61, 52);
         color: $darkBlue;
         @media (max-width: $phone + px) {
             margin-bottom: 10px;
@@ -62,10 +42,6 @@
     }
     // .first-screen__sub-title
     &__sub-title {
-        @include aminvalue("font-size", 12, 10, 320);
-        @include aminvalue("font-size", 20, 12, $phone);
-        line-height: 1.5;
-        margin-bottom: 19px;
         max-width: 80%;
         @media (max-width: $phone + px) {
             margin-bottom: 15px;

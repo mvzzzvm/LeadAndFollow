@@ -166,6 +166,57 @@ address {
     // filter: blur(264px);
     filter: blur(150px);
     border-radius: 50%;
+    pointer-events: none;
+}
+
+.start-block {
+    @include aminvalue("width", 212, 168, 320);
+    @include aminvalue("width", 390, 212, $phone);
+    @include aminvalue("height", 212, 168, 320);
+    @include aminvalue("height", 390, 212, $phone);
+    border-radius: 50%;
+    @include flex-center;
+    flex-direction: column;
+    z-index: 5;
+    text-align: center;
+    position: relative;
+    &::before {
+        content: "";
+        width: pc(349, 390);
+        height: pc(433, 390);
+        @include abs-center;
+        border: 3px solid $lightBlue;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+    // .start-block__title
+    &__title {
+        font-family: PhillippScript;
+        @include aminvalue("font-size", 24, 18, 320);
+        @include aminvalue("font-size", 52, 24, $phone);
+        line-height: math.div(61, 52);
+        color: $darkBlue;
+        @media (max-width: $phone + px) {
+            margin-bottom: 10px;
+        }
+    }
+    // .start-block__sub-title
+    &__sub-title {
+        @include aminvalue("font-size", 12, 10, 320);
+        @include aminvalue("font-size", 20, 12, $phone);
+        line-height: 1.5;
+        max-width: 80%;
+    }
+    // .start-block__start-button
+    &__start-button {
+        margin-top: 19px;
+        @media (max-width: $phone + px) {
+            margin-top: 15px;
+        }
+        @media (max-width: $smallPhone + px) {
+            margin-top: 10px;
+        }
+    }
 }
 @keyframes fadeIn {
     0% {
