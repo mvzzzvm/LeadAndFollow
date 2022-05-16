@@ -156,7 +156,17 @@ address {
     text-align: center;
     color: $darkBlue;
 }
-
+%blurry-dot {
+    position: absolute;
+    content: "";
+    // @include size(793);
+    @include avalue("width", 793, 327);
+    @include avalue("height", 793, 327);
+    background: rgba(52, 131, 199, 0.2);
+    // filter: blur(264px);
+    filter: blur(150px);
+    border-radius: 50%;
+}
 @keyframes fadeIn {
     0% {
         opacity: 0;
