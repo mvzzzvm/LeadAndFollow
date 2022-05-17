@@ -1,0 +1,272 @@
+.teachers {
+    margin-top: 113px;
+    @media (max-width: $smallPhone + px) {
+        margin-top: 80px;
+    }
+    // .teachers__container
+    &__container {
+        overflow: hidden;
+        @media (max-width: $phone + 100 + px) {
+            // position: relative;
+        }
+    }
+    // .teachers__title
+    &__title {
+    }
+
+    // .teachers__slider
+    &__slider {
+        margin: 0 auto;
+        width: pc(630, $maxWidthContainer);
+        // overflow: hidden;
+        position: relative;
+        // outline: 5px solid rgba(purple, 0.3);
+        @media (max-width: 1200 + px) {
+            width: 75%;
+        }
+        @media (max-width: $phone + px) {
+            width: 75%;
+        }
+        @media (max-width: $smallPhone + px) {
+            // width: 78%;
+        }
+        .swiper-wrapper {
+            display: flex;
+            align-items: start;
+            // outline: 5px solid yellowgreen;
+        }
+        .swiper-slide {
+            flex: 0 0 100%;
+            opacity: 0.1;
+            transition: opacity 0.5s;
+            // outline: 5px solid rgba(lightblue, 0.3);
+            &-active {
+                opacity: 1;
+            }
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            @include size(75);
+            border-radius: 50%;
+            color: $lightBlue;
+            border: 1px solid;
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            transform: translate(0, -50%);
+            &::before {
+                transition: all 0.3s;
+                content: "\e900";
+                @extend %ic;
+                @include abs-center;
+                font-size: 34px;
+                text-align: center;
+            }
+            @media (max-width: $phone + px) {
+                @include size(65);
+                &::before {
+                    font-size: 24px;
+                }
+            }
+            @media (max-width: 700 + px) {
+                @include size(55);
+                top: math.div(160, 2) + px;
+            }
+            @media (max-width: $smallPhone + px) {
+                @include size(42);
+                top: math.div(130, 2) + px;
+                &::before {
+                    font-size: 15px;
+                }
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    // color: $darkBlue;
+                }
+            }
+        }
+        .swiper-button-prev {
+            left: -75 - 23px;
+            @media (max-width: 700 + px) {
+                left: 0;
+                transform: translate(-120%, 0%);
+            }
+            &::before {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    &::before {
+                        transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+                    }
+                }
+            }
+        }
+        .swiper-button-next {
+            right: -75 - 23px;
+            @media (max-width: 700 + px) {
+                right: 0;
+                transform: translate(120%, 0%);
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    &::before {
+                        transform: translate(-50%, -50%) scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    .swiper-pagination {
+        @include flex-center;
+        column-gap: 26px;
+        margin: 40px auto;
+        height: 30px;
+        // outline: 1px solid purple;
+        @media (max-width: $smallPhone + px) {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            display: block;
+        }
+        @media (max-width: $smallPhone + px) {
+            margin: 20px auto;
+        }
+        &-bullet {
+            transition: all 0.5s;
+            @include size(20);
+            flex: 0 0 20px;
+            border-radius: 50%;
+            background-color: #e1e1e1;
+            cursor: pointer;
+            border: 4px solid #e1e1e1;
+            @media (max-width: $smallPhone + px) {
+                position: relative;
+                text-align: center;
+                display: inline-block;
+                margin: auto 13px;
+                @include size(30);
+                transform: scale(math.div(20, 30));
+            }
+            &-active {
+                @include size(24);
+                flex: 0 0 24px;
+                border-width: 4px;
+                border-color: $lightBlue;
+                @media (max-width: $smallPhone + px) {
+                    @include size(30);
+                    transform: none;
+                }
+            }
+        }
+    }
+}
+.teacher {
+    display: flex;
+    column-gap: 13px;
+    @media (max-width: $phone + px) {
+        column-gap: 10px;
+    }
+    @media (max-width: 700 + px) {
+        flex-direction: column;
+    }
+    // .teacher__image
+    &__image {
+        @media (max-width: 700 + px) {
+            display: flex;
+            column-gap: 16px;
+            justify-content: center;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        @media (max-width: $smallPhone + px) {
+            margin-bottom: 10px;
+        }
+        // outline: 1px solid red;
+        img {
+            border-radius: 20px;
+            @media (max-width: $phone + 50 + px) {
+                max-width: 160px;
+            }
+            @media (max-width: $smallPhone + px) {
+                max-width: 130px;
+            }
+        }
+    }
+    // .teacher__info
+    &__info {
+        // background: rgba(255, 255, 255, 0.1);
+        // backdrop-filter: blur(15px);
+        padding: 33px 20px 27px 41px;
+        border-radius: 20px;
+        color: #000;
+        border: 1px solid #e1e1e1;
+        @media (max-width: $phone + 50 + px) {
+            padding: 24px 15px 20px 30px;
+            height: 100%;
+        }
+        @media (max-width: $smallPhone + px) {
+            width: 140%;
+            margin-left: -20%;
+        }
+    }
+    // .teacher__name
+    &__name {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.15;
+        margin-bottom: 21px;
+        span._normal {
+            font-weight: 400;
+            font-size: 90%;
+            display: inline-block;
+            padding-top: 0.5em;
+        }
+        @media (max-width: 700 + px) {
+            align-self: center;
+            // outline: 1px solid red;
+        }
+        @media (max-width: $phone + 50 + px) {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+    }
+    // .teacher__description
+    &__description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        @media (max-width: $phone + 50 + px) {
+            font-size: 10px;
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+                @media (max-width: $phone + 50  + px) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        em {
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+    &__description-list-item {
+        position: relative;
+        &::before {
+            content: "";
+            @include size(6);
+            position: absolute;
+            left: 0;
+            top: 5px;
+            margin-left: -15px;
+            border-radius: 50%;
+            background-color: #e1e1e1;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

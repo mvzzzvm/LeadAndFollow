@@ -1,4 +1,5 @@
 import Swiper, { Navigation, Pagination, Controller, Thumbs, Autoplay } from "swiper"
+import "swiper/css"
 
 function buildSliders(enableZoom = false) {
     document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)').forEach((slider) => {
@@ -108,5 +109,62 @@ export function initSliders() {
             }
             prevWidth = window.innerWidth
         })
+    }
+    const teachersSliderEl = document.querySelector(".teachers__slider")
+    if (teachersSliderEl) {
+        const teachersSliderOptions = {
+            modules: [Pagination, Navigation],
+            allowTouchMove: true,
+            spaceBetween: 130,
+            loop: true,
+            loopedSlides: 2,
+            speed: 500,
+            autoHeight: true,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: ".teachers__slider .swiper-button-next",
+                prevEl: ".teachers__slider .swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "bullets",
+                clickable: true,
+            },
+            breakpoints: {
+                480: {
+                    pagination: {
+                        dynamicBullets: false,
+                    },
+                },
+                320: {
+                    pagination: {
+                        dynamicBullets: true,
+                    },
+                },
+            },
+        }
+        const teachersSlider = new Swiper(teachersSliderEl, teachersSliderOptions)
+
+        const slides = teachersSliderEl.querySelectorAll(".swiper-slide")
+        window.addEventListener("resize", resize)
+        let prevWidth = Number.MAX_SAFE_INTEGER
+        resize()
+        function resize() {
+            if (window.innerWidth <= 700 && prevWidth > 700) {
+                slides.forEach((slide) => {
+                    const name = slide.querySelector(".teacher__name")
+                    const image = slide.querySelector(".teacher__image")
+                    image.append(name)
+                })
+            } else if (window.innerWidth > 700 && prevWidth <= 700) {
+                slides.forEach((slide) => {
+                    const name = slide.querySelector(".teacher__name")
+                    const image = slide.querySelector(".teacher__image")
+                    const description = slide.querySelector(".teacher__description")
+                    description.prepend(name)
+                })
+            }
+            prevWidth = window.innerWidth
+        }
     }
 }
