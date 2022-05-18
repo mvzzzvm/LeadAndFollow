@@ -122,6 +122,8 @@
         column-gap: 26px;
         margin: 40px auto;
         height: 30px;
+        position: relative;
+        z-index: 4;
         // outline: 1px solid purple;
         @media (max-width: $smallPhone + px) {
             overflow: hidden;
