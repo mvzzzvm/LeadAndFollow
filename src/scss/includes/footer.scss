@@ -1,20 +1,22 @@
 .footer {
     color: #fff;
+    z-index: 5;
+    position: relative;
+    ._decor-footer-bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: -1;
+        pointer-events: none;
+    }
     // .footer__container
     &__container {
         padding-top: 34px;
         padding-bottom: 17px;
         position: relative;
-        ._decor-footer-bg {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            z-index: -1;
-            pointer-events: none;
-        }
     }
     &__content {
         max-width: pc(680, $maxWidthContainer);
