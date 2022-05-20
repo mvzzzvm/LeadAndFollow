@@ -1,7 +1,7 @@
 .services {
     margin-top: 46px;
     position: relative;
-    overflow: hidden;
+    overflow-x: clip;
     &::before {
         @extend %fabric;
         transform: translate(-50%, -20%);
