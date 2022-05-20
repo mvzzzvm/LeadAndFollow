@@ -1,0 +1,116 @@
+.awards {
+    margin-top: 130px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    // position: relative;
+    &::before {
+        @extend %fabric;
+        transform: translate(-50%, -35%) scaleX(-1);
+        opacity: 0.9;
+    }
+    @media (max-width: $phone + px) {
+        margin-top: 100px;
+        margin-bottom: 80px;
+    }
+    @media (max-width: $smallPhone + px) {
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+    // .awards__container
+    &__container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    &__title {
+        margin-bottom: 60px;
+    }
+    // .awards__slider
+    &__slider {
+        width: pc(605, $maxWidthContainer);
+        margin: 0 auto;
+        position: relative;
+        @media (max-width: 1024 + px) {
+            width: 66%;
+        }
+        @media (max-width: $phone + px) {
+            width: 75%;
+        }
+        @media (max-width: $smallPhone + px) {
+            width: 96%;
+        }
+        .swiper-wrapper {
+        }
+        .swiper-slide {
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            transform: translate(0, calc(-50% - 54px));
+            @media (max-width: $smallPhone + px) {
+                display: none;
+            }
+        }
+        .swiper-button-prev {
+            @media (max-width: 1024 + px) {
+                left: 0;
+                transform: translate(-120%, calc(-50% - 54px));
+            }
+            @media (max-width: $phone + px) {
+                transform: translate(-110%, calc(-50% - 54px));
+            }
+        }
+        .swiper-button-next {
+            @media (max-width: 1024 + px) {
+                right: 0;
+                transform: translate(120%, calc(-50% - 54px));
+            }
+            @media (max-width: $phone + px) {
+                transform: translate(110%, calc(-50% - 54px));
+            }
+        }
+        .swiper-pagination {
+            // position: absolute;
+            // left: 50%;
+            // bottom: 0;
+            // transform: translate(-50%, 0);
+            // max-width: 170px;
+        }
+    }
+    // .awards__award
+    &__award {
+    }
+}
+
+.award {
+    color: #000;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 0 36px 60px;
+    border: 1px solid #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $smallPhone + px) {
+        padding: 0 22px 32px;
+    }
+    // .award__image
+    &__image {
+        border-radius: 20px;
+        margin-bottom: 20px;
+        @include size(160, 105);
+        margin-top: -56px;
+    }
+    // .award__title
+    &__title {
+        font-size: 16px;
+        line-height: math.div(19, 16);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 23px;
+    }
+    // .award__text
+    &__text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

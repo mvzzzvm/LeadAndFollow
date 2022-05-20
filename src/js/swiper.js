@@ -126,7 +126,7 @@ export function initSliders() {
                 prevEl: ".teachers__slider .swiper-button-prev",
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: ".teachers__container .swiper-pagination",
                 type: "bullets",
                 clickable: true,
             },
@@ -160,11 +160,46 @@ export function initSliders() {
                 slides.forEach((slide) => {
                     const name = slide.querySelector(".teacher__name")
                     const image = slide.querySelector(".teacher__image")
-                    const description = slide.querySelector(".teacher__description")
+                    const description = slide.querySelector(".teacher__text")
                     description.prepend(name)
                 })
             }
             prevWidth = window.innerWidth
         }
+    }
+    const awardsSliderEl = document.querySelector(".awards__slider")
+    if (awardsSliderEl) {
+        const awardsSliderOptions = {
+            modules: [Pagination, Navigation],
+            allowTouchMove: true,
+            spaceBetween: 130,
+            loop: true,
+            loopedSlides: 2,
+            speed: 500,
+            autoHeight: true,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: ".awards__slider .swiper-button-next",
+                prevEl: ".awards__slider .swiper-button-prev",
+            },
+            pagination: {
+                el: ".awards__container .swiper-pagination",
+                type: "bullets",
+                clickable: true,
+            },
+            breakpoints: {
+                481: {
+                    pagination: {
+                        dynamicBullets: false,
+                    },
+                },
+                320: {
+                    pagination: {
+                        dynamicBullets: true,
+                    },
+                },
+            },
+        }
+        const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
     }
 }
