@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     initSliders()
 })
 
+import { servisesResizer } from "./modules/resizer.js"
+servisesResizer()
+
 // import { hideAndToggle } from "./modules/hider-and-toggler.js"
 // hideAndToggle()
 
