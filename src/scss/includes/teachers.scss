@@ -1,5 +1,7 @@
 .teachers {
     margin-top: 113px;
+    position: relative;
+    z-index: 4;
     @media (max-width: $smallPhone + px) {
         margin-top: 80px;
     }
@@ -31,134 +33,27 @@
             // width: 78%;
         }
         .swiper-wrapper {
-            display: flex;
-            align-items: start;
             // outline: 5px solid yellowgreen;
         }
         .swiper-slide {
-            flex: 0 0 100%;
-            opacity: 0.1;
-            transition: opacity 0.5s;
-            // outline: 5px solid rgba(lightblue, 0.3);
-            &-active {
-                opacity: 1;
-            }
         }
         .swiper-button-next,
         .swiper-button-prev {
-            @include size(75);
-            border-radius: 50%;
-            color: $lightBlue;
-            border: 1px solid;
-            position: absolute;
-            top: 50%;
-            cursor: pointer;
-            transform: translate(0, -50%);
-            &::before {
-                transition: all 0.3s;
-                content: "\e900";
-                @extend %ic;
-                @include abs-center;
-                font-size: 34px;
-                text-align: center;
-            }
-            @media (max-width: $phone + px) {
-                @include size(65);
-                &::before {
-                    font-size: 24px;
-                }
-            }
             @media (max-width: 700 + px) {
-                @include size(55);
                 top: math.div(160, 2) + px;
             }
             @media (max-width: $smallPhone + px) {
-                @include size(42);
                 top: math.div(130, 2) + px;
-                &::before {
-                    font-size: 15px;
-                }
-            }
-            @media (any-hover: hover) {
-                &:hover {
-                    // color: $darkBlue;
-                }
             }
         }
         .swiper-button-prev {
-            left: -75 - 23px;
-            @media (max-width: 700 + px) {
-                left: 0;
-                transform: translate(-120%, 0%);
-            }
-            &::before {
-                transform: translate(-50%, -50%) rotate(180deg);
-            }
-            @media (any-hover: hover) {
-                &:hover {
-                    &::before {
-                        transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
-                    }
-                }
-            }
         }
         .swiper-button-next {
-            right: -75 - 23px;
-            @media (max-width: 700 + px) {
-                right: 0;
-                transform: translate(120%, 0%);
-            }
-            @media (any-hover: hover) {
-                &:hover {
-                    &::before {
-                        transform: translate(-50%, -50%) scale(1.1);
-                    }
-                }
-            }
         }
     }
     .swiper-pagination {
-        @include flex-center;
-        column-gap: 26px;
-        margin: 40px auto;
-        height: 30px;
-        position: relative;
-        z-index: 4;
-        // outline: 1px solid purple;
-        @media (max-width: $smallPhone + px) {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            display: block;
-        }
-        @media (max-width: $smallPhone + px) {
-            margin: 20px auto;
-        }
         &-bullet {
-            transition: all 0.5s;
-            @include size(20);
-            flex: 0 0 20px;
-            border-radius: 50%;
-            background-color: #e1e1e1;
-            cursor: pointer;
-            border: 4px solid #e1e1e1;
-            @media (max-width: $smallPhone + px) {
-                position: relative;
-                text-align: center;
-                display: inline-block;
-                margin: auto 13px;
-                @include size(30);
-                transform: scale(math.div(20, 30));
-            }
             &-active {
-                @include size(24);
-                flex: 0 0 24px;
-                border-width: 4px;
-                border-color: $lightBlue;
-                @media (max-width: $smallPhone + px) {
-                    @include size(30);
-                    transform: none;
-                }
             }
         }
     }
@@ -234,7 +129,7 @@
         }
     }
     // .teacher__description
-    &__description {
+    &__text {
         font-weight: 400;
         font-size: 14px;
         line-height: 1.5;
@@ -255,20 +150,6 @@
             font-style: normal;
         }
     }
-    &__description-list-item {
-        position: relative;
-        &::before {
-            content: "";
-            @include size(6);
-            position: absolute;
-            left: 0;
-            top: 5px;
-            margin-left: -15px;
-            border-radius: 50%;
-            background-color: #e1e1e1;
-        }
-        &:not(:last-child) {
-            margin-bottom: 10px;
-        }
+    &__text-list-item {
     }
 }
