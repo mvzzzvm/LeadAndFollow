@@ -1,10 +1,6 @@
 .teachers {
-    margin-top: 113px;
     position: relative;
     z-index: 4;
-    @media (max-width: $smallPhone + px) {
-        margin-top: 80px;
-    }
     // .teachers__container
     &__container {
         overflow: hidden;

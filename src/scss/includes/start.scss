@@ -1,8 +1,10 @@
 .start {
     margin-top: 120px;
     position: relative;
+    padding-bottom: 120px;
     @media (max-width: $smallPhone + px) {
         margin-top: 80px;
+        padding-bottom: 80px;
     }
     &::before {
         content: "";
