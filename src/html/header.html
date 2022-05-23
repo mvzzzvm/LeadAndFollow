@@ -6,10 +6,12 @@
         <nav class="header__menu menu" data-da=".header__navigation,768,first">
             <ul class="menu__list">
                 <li class="menu__item">
-                    <a href="!#" class="menu__link">about us</a>
+                    <a href="/about-page.html"
+                        class="menu__link @@if(context.active == 'about') {menu__link--active}">About
+                        us</a>
                 </li>
                 <li class="menu__item">
-                    <a href="!#" class="menu__link menu__link--active">News</a>
+                    <a href="!#" class="menu__link">News</a>
                 </li>
                 <li class="menu__item">
                     <a href="!#" class="menu__link">Classes</a>
@@ -18,7 +20,8 @@
                     <a href="!#" class="menu__link">Special Events</a>
                 </li>
                 <li class="menu__item">
-                    <a href="!#" class="menu__link">Prices</a>
+                    <a href="/prices-page.html"
+                        class="menu__link @@if(context.active == 'prices') {menu__link--active}">Prices</a>
                 </li>
                 <li class="menu__item">
                     <a href="!#" class="menu__link">Contacts</a>
