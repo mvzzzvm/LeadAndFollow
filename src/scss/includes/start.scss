@@ -10,12 +10,15 @@
         top: 0%;
         left: 50%;
         width: 100%;
-        height: 100%;
+        height: 150%;
         z-index: -2;
-        transform: translate(-50%, -28%);
-        background: center top / cover no-repeat url(../../img/start/fabric-bg-2.jpg);
+        transform: translate(-50%, -25%);
+        background: center top no-repeat url(../../img/start/fabric-bg-2.jpg);
         @media (max-width: $smallPhone + px) {
             transform: translate(-50%, -20%);
+        }
+        @media (min-width: $maxWidthContainer + px) {
+            background-size: cover;
         }
     }
     // .start__container
@@ -26,10 +29,10 @@
     }
     // .start-block
     &__start-block {
-        @include aminvalue("width", 360, 294, 320);
         @include aminvalue("width", 457, 360, $phone);
-        @include aminvalue("height", 360, 294, 320);
+        @include aminvalue("width", 360, 294, 320);
         @include aminvalue("height", 457, 360, $phone);
+        @include aminvalue("height", 360, 294, 320);
         margin: 0 auto;
         background: linear-gradient(75.62deg, #009ee2 7.02%, #273992 91.67%);
         &::before {
