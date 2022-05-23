@@ -75,3 +75,30 @@
         }
     }
 }
+.prices-page {
+    .start {
+        &::before {
+            transform: translate(-50%, -15%);
+            @media (min-width: 1400 + 1 + px) {
+                transform: translate(-50%, -20%);
+            }
+        }
+        padding-bottom: 270px;
+        .start__container {
+            position: relative;
+            &::before {
+                @extend %blurry-dot;
+                left: -50%;
+                top: 0;
+                @media (max-width: $phone + px) {
+                    display: none;
+                }
+            }
+        }
+        .start-block {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
