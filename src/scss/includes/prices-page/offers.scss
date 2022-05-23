@@ -1,0 +1,174 @@
+.offers {
+    padding-top: 250px;
+    margin-top: -200px;
+    margin-bottom: 20px;
+    &::before {
+        @extend %fabric;
+        transform: translate(-50%, -10%);
+        opacity: 0.5;
+    }
+    // .offers__container
+    &__container {
+    }
+    // .offers__special-offer
+    &__special-offer {
+        max-width: 811px;
+        margin-left: auto;
+        margin-right: auto;
+        @include avalue("margin-bottom", 150, 50);
+    }
+    // .offers__offer-list
+    &__offer-list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        @media (max-width: $smallPhone + 150 + px) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+    // .offers__offer-list-item
+    &__offer-list-item {
+        flex: 0 0 pc(290, $maxWidthContainer);
+        @media (max-width: $smallPhone + 150 + px) {
+            flex: 0 0 calc(50% - 10px);
+        }
+        @media (max-width: $smallPhone + px) {
+            flex: 0 0 100%;
+        }
+    }
+}
+.soffer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid #e1e1e1;
+    @media (max-width: $smallPhone + 150 + px) {
+        flex-direction: column;
+    }
+    // .soffer__image
+    &__image {
+        width: 286px;
+        flex: 0 0 pc(286, 811);
+        @media (max-width: $smallPhone + 150 + px) {
+            position: relative;
+            padding-bottom: pc(223, 320 - 30);
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px 0 0 20px;
+            @media (max-width: $smallPhone + 150 + px) {
+                border-radius: 20px 20px 0 0;
+                width: 100%;
+                max-height: 100%;
+                position: absolute;
+            }
+        }
+    }
+    // .soffer__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 25px 18px 25px;
+    }
+    // .soffer__title
+    &__title {
+        font-size: 24px;
+        line-height: math.div(28, 24);
+        font-weight: 700;
+        color: $darkBlue;
+        margin-bottom: 24px;
+        @media (max-width: $smallPhone + 150 + px) {
+            font-size: 16px;
+        }
+    }
+    // .soffer__list
+    &__list {
+        color: #000;
+        line-height: math.div(16, 14);
+        @media (max-width: $smallPhone + 150 + px) {
+            font-size: 12px;
+        }
+    }
+    // .soffer__list-item
+    &__list-item {
+        em {
+            font-weight: 700;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    // .soffer__footnote-list
+    &__footnote-list {
+        font-size: 10px;
+        line-height: math.div(12, 10);
+        margin-bottom: 20px;
+        flex-grow: 1;
+        margin-top: 15px;
+    }
+    // .soffer__footnote-list-item
+    &__footnote-list-item {
+    }
+    // .soffer__referral-bonus
+    &__referral-bonus {
+        font-size: 10px;
+        line-height: math.div(12, 10);
+        font-weight: 700;
+        em {
+            color: $lightBlue;
+        }
+    }
+}
+.offer {
+    padding: 26px 18px;
+    background: #ffffff;
+    box-shadow: 0px 15px 45px rgba(7, 55, 115, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: $smallPhone + 150 + px) and (max-width: $phone + 100 + px) {
+        padding: 17px 10px;
+    }
+
+    // .offer__title
+    &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+        min-height: 50px;
+        margin-bottom: 5px;
+        @media (max-width: $phone + 100 + px) {
+            font-size: 12px;
+            min-height: 35px;
+        }
+        @media (max-width: $smallPhone + 100 + px) {
+            font-size: 14px;
+        }
+    }
+    // .offer__feature-list
+    &__feature-list {
+        flex-grow: 1;
+    }
+    // .offer__feature-list-item
+    &__feature-list-item {
+        line-height: math.div(18.2, 14);
+        @media (max-width: $phone + 150 + px) {
+            font-size: 10px;
+        }
+        @media (max-width: $smallPhone + 150 + px) {
+            font-size: 14px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+        em {
+            color: $darkBlue;
+            font-weight: 700;
+        }
+    }
+}
