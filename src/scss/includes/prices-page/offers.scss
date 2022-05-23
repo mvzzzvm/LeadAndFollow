@@ -4,8 +4,11 @@
     margin-bottom: 20px;
     &::before {
         @extend %fabric;
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, 10%);
         opacity: 0.5;
+        @media (max-width: $phone + px) {
+            transform: translate(-50%, -5%);
+        }
     }
     // .offers__container
     &__container {
