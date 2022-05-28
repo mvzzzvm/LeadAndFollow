@@ -12,27 +12,7 @@
     }
     // .services__container
     &__container {
-        position: relative;
-        &::before {
-            @extend %blurry-dot;
-            left: -60%;
-            top: 50%;
-            transform: translate(0, -75%);
-            @media (max-width: $phone + px) {
-                // @include size(300);
-                left: -70%;
-                // filter: blur(100px);
-                // transform: translate(0, 0);
-            }
-            @media (max-width: $smallPhone + px) {
-                left: -50%;
-            }
-        }
-        &::after {
-            @extend %blurry-dot;
-            bottom: 0;
-            right: -60%;
-        }
+        @extend %blurry-dots;
     }
     // .services__text
     &__text {
