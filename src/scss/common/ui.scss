@@ -71,8 +71,8 @@ address {
     background: linear-gradient(75.62deg, #009ee2 7.02%, #273992 91.67%);
     color: #fff;
 }
+
 %fabric {
-    &::before {
         content: "";
         position: absolute;
         top: 50%;
@@ -83,7 +83,6 @@ address {
         transform: translate(-50%, 10%);
         background: center top no-repeat url(../../img/about-us/fabric.png);
     }
-}
 %button {
     // height: 60px; // 25
     font-family: Raleway;
