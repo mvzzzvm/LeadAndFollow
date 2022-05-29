@@ -123,17 +123,8 @@
     }
     // .class__button
     &__button {
-        align-self: end;
-        font-size: 12px;
-        gap: 7px;
         @media (max-width: 603 + px) {
             margin-top: 15px;
-        }
-        &::before {
-            display: block;
-            background: none;
-            @include size(21);
-            font-size: 19px;
         }
     }
 }
