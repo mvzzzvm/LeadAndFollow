@@ -82,6 +82,9 @@ address {
     z-index: -2;
     transform: translate(-50%, 10%);
     background: center top no-repeat url(../../img/about-us/fabric.png);
+    @media (min-width: $maxWidth + 1+ px) {
+        background-size: cover;
+    }
 }
 %button {
     // height: 60px; // 25
