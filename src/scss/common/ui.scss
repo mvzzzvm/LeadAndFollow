@@ -333,6 +333,7 @@ address {
         }
     }
 }
+
 ._inner-page {
     .first-screen {
         position: relative;
@@ -387,7 +388,6 @@ address {
         // .first-screen__title
         &__title {
             margin-top: 128px;
-            font-size: 100px;
             line-height: 1.18;
             text-align: center;
             position: relative;
