@@ -1,5 +1,5 @@
 import Swiper, { Navigation, Pagination, Controller, Thumbs, Autoplay } from "swiper"
-import "swiper/css"
+// import "swiper/css"
 
 function buildSliders(enableZoom = false) {
     document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)').forEach((slider) => {
@@ -201,5 +201,70 @@ export function initSliders() {
             },
         }
         const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
+    }
+    singeNewsSlider()
+}
+function singeNewsSlider() {
+    const prefix = ".news-content"
+    const mainSlider = document.querySelector(prefix + "__main-slider")
+    const thumbsSlider = document.querySelector(prefix + "__thumbs-slider")
+    if (mainSlider && thumbsSlider) {
+        const thumbsOptions = {
+            modules: [Controller],
+            allowTouchMove: true,
+            slidesPerGroup: 1,
+            observer: true,
+            observeParents: true,
+            loop: true,
+            loopedSlides: 6,
+            slidesPerView: 4,
+            spaceBetween: 8,
+            breakpoints: {
+                769: {
+                    spaceBetween: 24,
+                    slidesPerView: 5,
+                },
+                481: {
+                    spaceBetween: 12,
+                    slidesPerView: 7,
+                    centeredSlides: true,
+                },
+                320: {
+                    // slidesPerView: 4,
+                    // spaceBetween: 8,
+                    centeredSlides: false,
+                },
+            },
+        }
+        let thumbs = new Swiper(thumbsSlider, thumbsOptions)
+
+        const mainOptions = {
+            modules: [Thumbs, Controller, Autoplay, Navigation],
+            // allowTouchMove: true,
+            // autoplay: true,
+            observer: true,
+            observeParents: true,
+            resizeObserver: true,
+            updateOnWindowResize: true,
+            loop: true,
+            slidesPerView: 1,
+            loopedSlides: 6,
+            spaceBetween: 200,
+            thumbs: {
+                swiper: thumbs,
+            },
+            breakpoints: {
+                1321: {
+                    spaceBetween: 150,
+                },
+            },
+            navigation: {
+                prevEl: prefix + "__main-slider .swiper-button-prev",
+                nextEl: prefix + "__main-slider .swiper-button-next",
+            },
+        }
+        let main = new Swiper(mainSlider, mainOptions)
+        main.controller.control = thumbs
+        //   thumbs.controller.control = main
     }
 }
