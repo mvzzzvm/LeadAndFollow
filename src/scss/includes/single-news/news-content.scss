@@ -1,10 +1,25 @@
 .news-content {
     padding: 46px 0;
+    position: relative;
+    &::before {
+        @extend %fabric;
+        transform: translate(-50%, -50%) scaleX(-1);
+        background-position: center;
+        opacity: 0.5;
+    }
     @media (max-width: $smallPhone + px) {
         padding: 20px 0;
     }
     // .news-content__container
     &__container {
+        position: relative;
+        @extend %blurry-dots;
+        &::before {
+        }
+        &::after {
+            bottom: auto;
+            top: 0%;
+        }
         // outline: 1px solid red;
         @media (max-width: $phone + px) {
             padding: 0 40px;
