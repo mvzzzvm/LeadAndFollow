@@ -400,6 +400,17 @@ address {
         }
     }
 }
+._single-page {
+    .first-screen {
+        &__title {
+            @include aminvalue("font-size", 100, 48, $phone);
+            @include aminvalue("font-size", 48, 24, 320);
+            @media (max-width: $phone + px) {
+                // margin-top: 40px;
+            }
+        }
+    }
+}
 ._section-title {
     font-family: "PhillippScript";
     font-weight: 400;
