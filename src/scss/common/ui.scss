@@ -200,7 +200,8 @@ address {
         margin-bottom: 10px;
     }
 }
-[class*="__slider"] {
+[class*="__slider"],
+[calss*="-slider"] {
     .swiper-wrapper {
         display: flex;
         align-items: start;
