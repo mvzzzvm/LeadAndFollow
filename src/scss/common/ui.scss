@@ -412,6 +412,82 @@ address {
         }
     }
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    // .pagination__list
+    &__list {
+        display: flex;
+        gap: 18px;
+        @media (max-width: $smallPhone + px) {
+            gap: 16px;
+        }
+    }
+    // .pagination__item
+    &__item {
+    }
+    // .pagination__button
+    &__button {
+        @include size(47);
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 700;
+        @include flex-center;
+        color: #000;
+        background-color: transparent;
+        transition: all 0.3s;
+        border-radius: 50%;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $lightBlue;
+                color: #fff;
+            }
+        }
+        @media (max-width: $smallPhone + px) {
+            @include size(37);
+            font-size: 10px;
+        }
+    }
+    // .pagination__button--disabled
+    &__button--disabled {
+        cursor: auto;
+        color: #939598;
+        &::before {
+            color: #939598;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #e1e1e1;
+            }
+        }
+    }
+    // .pagination__button--active
+    &__button--active {
+        background-color: #273992;
+        color: #fff;
+    }
+    &__button-prev,
+    &__button-next {
+        color: #273992;
+        &::before {
+            content: "\e900";
+            @extend %ic;
+            font-size: 21px;
+            @media (max-width: $smallPhone + px) {
+                font-size: 16px;
+            }
+        }
+    }
+    &__button-prev {
+        &::before {
+            transform: rotate(180deg);
+        }
+    }
+    // .pagination__button-next
+    &__button-next {
+    }
+}
 ._section-title {
     font-family: "PhillippScript";
     font-weight: 400;
