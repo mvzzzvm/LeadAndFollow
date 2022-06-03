@@ -89,19 +89,16 @@ address {
 %button {
     // height: 60px; // 25
     font-family: Raleway;
-    @include avalue("font-size", 16, 10);
     line-height: math.div(19, 16);
     font-weight: 700;
-    @include aminvalue("padding-top", 13, 10, 320);
-    @include aminvalue("padding-top", 24, 13, $phone);
-    @include aminvalue("padding-bottom", 13, 10, 320);
-    @include aminvalue("padding-bottom", 24, 13, $phone);
-    @include aminvalue("padding-left", 25, 20, 320);
-    @include aminvalue("padding-left", 70, 25, $phone);
-    @include aminvalue("padding-right", 25, 20, 320);
-    @include aminvalue("padding-right", 70, 25, $phone);
+    @include abetweenvalue('font-size', 16, 10, $phone, 8);
+    @include abetweenvalue('padding-top', 24, 13, $phone, 10);
+    @include abetweenvalue('padding-bottom', 24, 13, $phone, 10);
+    @include abetweenvalue('padding-left', 70, 25, $phone, 20);
+    @include abetweenvalue('padding-right', 70, 25, $phone, 20);
     border-radius: 60px;
     text-transform: uppercase;
+    z-index: 2;
 }
 ._arrow-button {
     text-transform: uppercase;
