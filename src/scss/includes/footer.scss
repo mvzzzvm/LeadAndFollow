@@ -143,5 +143,8 @@
 .special-events-page {
     .footer {
         margin-top: -150px;
+        @media (max-width: $smallPhone + px) {
+            margin-top: 0;
+        }
     }
 }
