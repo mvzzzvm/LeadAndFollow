@@ -338,16 +338,10 @@ address {
         width: 100%;
         margin: 0 auto;
         overflow: hidden;
-        height: 416px;
-        @media (max-width: $phone + px) {
-            height: 258px;
-        }
-        @media (max-width: $smallPhone + px) {
-            // height: 146px;
-            height: 200px;
-        }
+        @include abetweenvalue('height', 416, 278, $phone, 200);
         &::before {
             content: "";
+            pointer-events: none;
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0);
@@ -390,8 +384,7 @@ address {
             position: relative;
             z-index: 1;
             font-family: PhillippScript;
-            @include aminvalue("font-size", 100, 60, $phone);
-            @include aminvalue("font-size", 60, 48, 320);
+            @include abetweenvalue('font-size', 100, 60, $phone, 48);
             @media (max-width: $phone + px) {
                 margin-top: 60px;
             }
@@ -401,8 +394,7 @@ address {
 ._single-page {
     .first-screen {
         &__title {
-            @include aminvalue("font-size", 100, 48, $phone);
-            @include aminvalue("font-size", 48, 24, 320);
+            @include abetweenvalue('font-size', 100, 48, $phone, 24);
             @media (max-width: $phone + px) {
                 // margin-top: 40px;
             }
