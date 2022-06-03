@@ -83,7 +83,28 @@
         #{$prop}: $endValue + px;
     }
 }
-
+@mixin abetweenvalue($prop, $value1, $value2, $breakPoint, $value3) {
+    $addValue1: $value1 - $value2;
+    @media (min-width: #{$maxWidthContainer + 1} + px) {
+        #{$prop}: $value1 + px;
+    }
+    @media (min-width: #{$breakPoint} + px) and (max-width: #{$maxWidthContainer} + px) {
+        #{$prop}: calc(
+            #{$value2 + px} + #{$addValue1} *
+                ((100vw - #{$breakPoint + px}) / (#{$maxWidthContainer - $breakPoint}))
+        );
+    }
+    $addValue2: $value2 - $value3;
+    @media (min-width: 320px) and (max-width: #{$breakPoint} + px) {
+        #{$prop}: calc(
+            #{$value3 + px} + #{$addValue2} *
+                ((100vw - 320px) / (#{$breakPoint - 320}))
+        );
+    }
+    @media (max-width: 320px) {
+        #{$prop}: $value3 + px;
+    }
+}
 @mixin abs($top: 0, $left: 0) {
     position: absolute;
     top: $top + px;
