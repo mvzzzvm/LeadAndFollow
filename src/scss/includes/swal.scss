@@ -1,0 +1,26 @@
+.swal2 {
+    &-popup {
+    color: #000 !important;
+    border-radius: 20px !important;
+    }
+    &-title {
+
+    }
+        &-confirm {
+        //  background-color: $darkBlue !important;   
+        //  @extend %button;
+        //  border-radius: 60px !important;
+        width: 200px !important;
+        height: 60px;
+        font-size: 20px;
+        @include flex-center;
+        padding: 0;
+
+        }
+    &-icon.swal2-success .swal2-success-ring {
+        border-color: rgba($lightBlue, .5) !important;
+    }
+    &-icon.swal2-success [class^=swal2-success-line]{
+        background-color: rgba($lightBlue, .5) !important;
+    }
+}
