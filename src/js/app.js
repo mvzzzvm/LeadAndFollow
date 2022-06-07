@@ -50,5 +50,10 @@ servisesResizer()
 // togglePlaceholderOnFocus()
 // markRequiredFields()
 
-// import { validate } from "./modules/form-validation.js"
-// validate()
+import { validateSeparateFields, validateWholeForm } from "./modules/form-validation.js"
+const formSelector = '.start-block__form'
+validateWholeForm()
+validateSeparateFields(formSelector)
+
+// import { hmm } from "./modules/forms.js"
+// hmm()
