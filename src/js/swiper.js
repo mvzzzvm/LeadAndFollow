@@ -203,6 +203,7 @@ export function initSliders() {
         const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
     }
     singeNewsSlider()
+    singeSpecialEventSlider()
 }
 function singeNewsSlider() {
     const prefix = ".news-content"
@@ -266,5 +267,34 @@ function singeNewsSlider() {
         let main = new Swiper(mainSlider, mainOptions)
         main.controller.control = thumbs
         //   thumbs.controller.control = main
+    }
+}
+function singeSpecialEventSlider() {
+    const prefix = ".special-event"
+    const mainSlider = document.querySelector(prefix + "__slider")
+    if (mainSlider) {
+        const mainOptions = {
+            modules: [Navigation],
+            // allowTouchMove: true,
+            // autoplay: true,
+            observer: true,
+            observeParents: true,
+            resizeObserver: true,
+            updateOnWindowResize: true,
+            loop: true,
+            slidesPerView: 1,
+            loopedSlides: 2,
+            spaceBetween: 200,
+            breakpoints: {
+                1321: {
+                    spaceBetween: 150,
+                },
+            },
+            navigation: {
+                prevEl: prefix + "__slider .swiper-button-prev",
+                nextEl: prefix + "__slider .swiper-button-next",
+            },
+        }
+        let main = new Swiper(mainSlider, mainOptions)
     }
 }
