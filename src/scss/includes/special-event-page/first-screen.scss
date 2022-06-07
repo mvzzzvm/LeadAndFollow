@@ -1,8 +1,5 @@
 .special-event-page {
     .first-screen {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         // .first-screen__image
         &__image {
         }
@@ -11,29 +8,12 @@
         }
         // .first-screen__breadrumbs
         &__breadrumbs {
-            margin-top: 24px;
-            @media (max-width: $smallPhone + px) {
-                margin-top: 18px;
-            }
         }
         // .first-screen__title
         &__title {
-            margin-top: 20px;
-            @include avalue('margin-top', 20, 10);
-         }
+        }
         // .first-screen__info
         &__info {
-            @include abetweenvalue('font-size', 18, 12, $phone, 8);
-            @include avalue('margin-top', -25, 0);
-            line-height: math.div(26, 18);
-            font-weight: 700;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            span {
-                display: block;
-            }
         }
         // .first-screen__date
         &__date {
@@ -43,10 +23,9 @@
         }
         // .first-screen__button
         &__button {
-            @include avalue('margin-top', 25, 8);
-            @include abetweenvalue('padding-left', 90, 50, $phone, 37);
-            @include abetweenvalue('padding-right', 90, 50, $phone, 37);
-            
+            @include avalue("margin-top", 25, 8);
+            @include abetweenvalue("padding-left", 90, 50, $phone, 37);
+            @include abetweenvalue("padding-right", 90, 50, $phone, 37);
         }
     }
 }
