@@ -34,7 +34,6 @@
             background: no-repeat url(../../img/header/swosh.svg);
             background-position: center;
             z-index: -1;
-            pointer-events: none;
             @media (max-width: $phone + px) {
                 width: 340px;
                 height: 30px;
@@ -43,7 +42,6 @@
         &::after {
             content: "";
             position: absolute;
-            pointer-events: none;
             left: 0;
             bottom: 0;
             height: 16px;

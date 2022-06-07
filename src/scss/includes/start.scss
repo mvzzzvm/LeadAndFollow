@@ -14,7 +14,6 @@
         width: 100%;
         height: 150%;
         z-index: -2;
-        pointer-events: none;
         transform: translate(-50%, -25%);
         background: center top no-repeat url(../../img/start/fabric-bg-2.jpg);
         @media (max-width: $smallPhone + px) {
@@ -32,8 +31,8 @@
     }
     // .start-block
     &__start-block {
-        @include abetweenvalue('width', 457, 360, $phone, 294);
-        @include abetweenvalue('height', 457, 360, $phone, 294);
+        @include abetweenvalue("width", 457, 360, $phone, 294);
+        @include abetweenvalue("height", 457, 360, $phone, 294);
         margin: 0 auto;
         background: linear-gradient(75.62deg, #009ee2 7.02%, #273992 91.67%);
         &::before {
@@ -53,7 +52,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             color: #fff;
-            @include abetweenvalue('font-size', 52, 40, $phone, 30);
+            @include abetweenvalue("font-size", 52, 40, $phone, 30);
             @media (max-width: $phone + px) {
                 margin-top: 30px;
                 margin-bottom: 10px;
@@ -63,10 +62,10 @@
             }
         }
         .start-block__start-button {
-            @include abetweenvalue('padding-top', 24, 19, $phone, 15);
-            @include abetweenvalue('padding-bottom', 24, 19, $phone, 15);
-            @include abetweenvalue('padding-left', 70, 57, $phone, 45);
-            @include abetweenvalue('padding-right', 70, 57, $phone, 45);
+            @include abetweenvalue("padding-top", 24, 19, $phone, 15);
+            @include abetweenvalue("padding-bottom", 24, 19, $phone, 15);
+            @include abetweenvalue("padding-left", 70, 57, $phone, 45);
+            @include abetweenvalue("padding-right", 70, 57, $phone, 45);
         }
     }
 }
