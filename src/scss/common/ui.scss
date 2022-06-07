@@ -16,7 +16,12 @@ textarea {
     }
     &:-webkit-autofill,
     &:-webkit-autofill:focus {
+        // background-color: transparent !important;
+        // -webkit-box-shadow: 0 0 0 50px white inset;
         transition: background-color 600000s 0s, color 600000s 0s;
+    }
+    &:-internal-autofill-selected  {
+        // background-color: red !important;
     }
 }
 textarea {
@@ -60,6 +65,7 @@ address {
 }
 ::selection {
     background-color: #fcf37a;
+    color: $darkBlue;
 }
 .breadcrumbs {
     @include flex-center;
