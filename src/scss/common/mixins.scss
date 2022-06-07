@@ -63,9 +63,12 @@
 // }
 @mixin amaxvalue($prop, $startValue, $endValue, $maxWidth) {
     $addValue: $startValue - $endValue;
-    // #{$prop}: $startValue + px;
+    #{$prop}: $startValue + px;
     @media (max-width: #{$maxWidth} + px) {
         #{$prop}: calc(#{$endValue + px} + #{$addValue} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+    @media (max-width: $minWidth - 1 + px) {
+        #{$prop}: $endValue + px;
     }
 }
 @mixin aminvalue($prop, $startValue, $endValue, $minWidth) {
