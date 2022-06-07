@@ -14,6 +14,7 @@
         width: 100%;
         height: 150%;
         z-index: -2;
+        pointer-events: none;
         transform: translate(-50%, -25%);
         background: center top no-repeat url(../../img/start/fabric-bg-2.jpg);
         @media (max-width: $smallPhone + px) {
@@ -31,16 +32,15 @@
     }
     // .start-block
     &__start-block {
-        @include aminvalue("width", 457, 360, $phone);
-        @include aminvalue("width", 360, 294, 320);
-        @include aminvalue("height", 457, 360, $phone);
-        @include aminvalue("height", 360, 294, 320);
+        @include abetweenvalue('width', 457, 360, $phone, 294);
+        @include abetweenvalue('height', 457, 360, $phone, 294);
         margin: 0 auto;
         background: linear-gradient(75.62deg, #009ee2 7.02%, #273992 91.67%);
         &::before {
             width: pc(396, 457);
             height: pc(482, 457);
             transform: translate(-50%, -50%) rotate(98.8deg);
+            z-index: -2;
         }
         &::after {
             top: 50%;
@@ -53,8 +53,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             color: #fff;
-            @include aminvalue("font-size", 40, 30, 320);
-            @include aminvalue("font-size", 52, 40, $phone);
+            @include abetweenvalue('font-size', 52, 40, $phone, 30);
             @media (max-width: $phone + px) {
                 margin-top: 30px;
                 margin-bottom: 10px;
@@ -64,14 +63,10 @@
             }
         }
         .start-block__start-button {
-            @include aminvalue("padding-top", 19, 15, 320);
-            @include aminvalue("padding-top", 24, 19, $phone);
-            @include aminvalue("padding-bottom", 19, 15, 320);
-            @include aminvalue("padding-bottom", 24, 19, $phone);
-            @include aminvalue("padding-left", 57, 45, 320);
-            @include aminvalue("padding-left", 70, 57, $phone);
-            @include aminvalue("padding-right", 57, 45, 320);
-            @include aminvalue("padding-right", 70, 57, $phone);
+            @include abetweenvalue('padding-top', 24, 19, $phone, 15);
+            @include abetweenvalue('padding-bottom', 24, 19, $phone, 15);
+            @include abetweenvalue('padding-left', 70, 57, $phone, 45);
+            @include abetweenvalue('padding-right', 70, 57, $phone, 45);
         }
     }
 }
