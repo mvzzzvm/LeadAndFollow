@@ -34,7 +34,7 @@ body {
     font-family: $fontFamily;
     @include avalue("font-size", $fontSize, $minFontSize);
     line-height: math.div($lineHeight, $fontSize);
-    font-weight: 500;
+    font-weight: 400;
     color: $mainTextColor;
     background-color: $background;
     &._lock {
