@@ -500,6 +500,11 @@ address {
                 display: block;
             }
         }
+        &__button {
+            @include avalue("margin-top", 25, 8);
+            @include abetweenvalue("padding-left", 90, 50, $phone, 37);
+            @include abetweenvalue("padding-right", 90, 50, $phone, 37);
+        }
     }
 }
 .pagination {

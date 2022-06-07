@@ -6,7 +6,8 @@
 <body class="about-page _inner-page">
     @@include('html/header.html', {active: 'about'})
     <main class="main wrapper">
-        @@include('html/about-page/first-screen.html')
+        @@include('html/inner-page/first-screen.html', {title: 'About Us', img:
+        '@img/inner-page/first-screen/about-page.jpg'})
         @@include('html/about-page/services.html')
         @@include('html/about-page/awards.html')
     </main>
