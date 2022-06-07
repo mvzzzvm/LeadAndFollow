@@ -52,6 +52,7 @@
   "dependencies": {
     "jquery": "^3.6.0",
     "jquery-ui": "^1.13.1",
+    "sweetalert2": "^11.4.17",
     "swiper": "^8.0.5"
   }
 }
