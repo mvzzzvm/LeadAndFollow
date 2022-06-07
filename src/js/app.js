@@ -51,8 +51,8 @@ servisesResizer()
 // markRequiredFields()
 
 import { validateSeparateFields, validateWholeForm } from "./modules/form-validation.js"
-const formSelector = '.start-block__form'
-validateWholeForm()
+const formSelector = ".start-block__form"
+validateWholeForm(formSelector)
 validateSeparateFields(formSelector)
 
 // import { hmm } from "./modules/forms.js"
