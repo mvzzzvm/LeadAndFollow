@@ -1,8 +1,10 @@
 <div class="first-screen">
     <img src="@img/special-event-page/first-screen/dancers.jpg" class="first-screen__image" alt="Classes">
     <div class="first-screen__container">
-        <div class="first-screen__breadrumbs">
-            @@include('breadcrumbs.html')
+        <div class="first-screen__breadcrumbs">
+            @@include('../../html/breadcrumbs.html', {firstItem: {title: 'Main', link: '/'}, secondItem: {title:
+            'Special Events', link: '/special-events-page.html'}, thirdItem: {title:
+            'Friday DanceEvent'}})
         </div>
         <h1 class="first-screen__title">Friday Dance Event</h1>
         <div class="first-screen__info">

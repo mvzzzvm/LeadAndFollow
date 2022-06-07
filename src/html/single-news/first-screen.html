@@ -1,6 +1,12 @@
 <div class="first-screen">
     <img src="@img/single-news/first-screen/dancers.jpg" class="first-screen__image" alt="Classes">
     <div class="first-screen__container">
+        <div class="first-screen__breadcrumbs">
+            @@include('../../html/breadcrumbs.html', {
+            firstItem: {title: 'Main', link: '/'}, secondItem: {title: 'News', link: '/news-page.html'}
+            , thirdItem: {title : 'We are open! New schedule for summer 2021'}})
+        </div>
+        <time datetime="2022-05-06" class="first-screen__time">21.05.2021</time>
         <h1 class="first-screen__title">@@title</h1>
     </div>
 </div>
