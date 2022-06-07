@@ -104,6 +104,26 @@ address {
         // outline: 2px solid red;
     }
 }
+._error-list {
+    text-align: left;
+    margin-left: 11px;
+    color: #f55;
+    font-weight: 700;
+    opacity: 0;
+    min-height: 1em  * 1.2;
+    line-height: 1.2;
+    transition: all .3s;
+    margin-top: 2px;
+    @include avalue('font-size', 16, 10);
+    @media (max-width: $smallPhone + px) {
+        margin-left: 9px;
+    }
+    li {
+    }
+    &--visible {
+        opacity: 1;
+    }
+}
 ._light-button {
     @extend %button;
     color: $lightBlue;
