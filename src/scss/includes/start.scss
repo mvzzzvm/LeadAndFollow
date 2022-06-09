@@ -1,5 +1,5 @@
 .start {
-    margin-top: 120px;
+    margin-top: 60px;
     position: relative;
     padding-bottom: 120px;
     @media (max-width: $smallPhone + px) {
@@ -94,6 +94,13 @@
             &::after {
                 display: none;
             }
+        }
+    }
+}
+._single-page {
+    .start {
+        &::before {
+            transform: translate(-50%, -13%);
         }
     }
 }
