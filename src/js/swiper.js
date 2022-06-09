@@ -202,22 +202,79 @@ export function initSliders() {
         }
         const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
     }
-    singeNewsSlider()
+    // singeNewsSlider()
     singlePageSlider()
 }
+
+// deprecated
 function singeNewsSlider() {
-    const prefix = ".news-content"
+    const prefix = "._single-page"
     const mainSlider = document.querySelector(prefix + "__main-slider")
     const thumbsSlider = document.querySelector(prefix + "__thumbs-slider")
     if (mainSlider && thumbsSlider) {
-        const thumbsOptions = {
-            modules: [Controller],
+        let thumbs = new Swiper(thumbsSlider, thumbsOptions)
+
+        const mainOptions = {
+            modules: [Thumbs, Controller, Autoplay, Navigation],
             allowTouchMove: true,
-            slidesPerGroup: 1,
+            // autoplay: true,
             observer: true,
             observeParents: true,
+            resizeObserver: true,
+            updateOnWindowResize: true,
             loop: true,
+            slidesPerView: 1,
             loopedSlides: 6,
+            spaceBetween: 200,
+            breakpoints: {
+                1321: {
+                    spaceBetween: 150,
+                },
+            },
+            navigation: {
+                prevEl: prefix + "__main-slider .swiper-button-prev",
+                nextEl: prefix + "__main-slider .swiper-button-next",
+            },
+            thumbs: {
+                swiper: thumbs,
+            },
+        }
+        let main = new Swiper(mainSlider, mainOptions)
+        main.controller.control = thumbs
+        //   thumbs.controller.control = main
+    }
+}
+
+function singlePageSlider() {
+    const loopedSlides = 6
+    const commonOptions = {
+        observer: true,
+        observeParents: true,
+        // allowTouchMove: true,
+        loopedSlides: loopedSlides,
+    }
+    const commonMainOptions = {
+        ...commonOptions,
+        ...{
+            resizeObserver: true,
+            updateOnWindowResize: true,
+            loop: true,
+            slidesPerView: 1,
+            loopedSlides: loopedSlides,
+            spaceBetween: 200,
+            breakpoints: {
+                1321: {
+                    spaceBetween: 150,
+                },
+            },
+        },
+    }
+    const thumbsOptions = {
+        ...commonOptions,
+        ...{
+            modules: [Controller],
+            slidesPerGroup: 1,
+            loop: true,
             slidesPerView: 4,
             spaceBetween: 8,
             breakpoints: {
@@ -236,66 +293,38 @@ function singeNewsSlider() {
                     centeredSlides: false,
                 },
             },
-        }
-        let thumbs = new Swiper(thumbsSlider, thumbsOptions)
-
-        const mainOptions = {
-            modules: [Thumbs, Controller, Autoplay, Navigation],
-            // allowTouchMove: true,
-            // autoplay: true,
-            observer: true,
-            observeParents: true,
-            resizeObserver: true,
-            updateOnWindowResize: true,
-            loop: true,
-            slidesPerView: 1,
-            loopedSlides: 6,
-            spaceBetween: 200,
-            thumbs: {
-                swiper: thumbs,
-            },
-            breakpoints: {
-                1321: {
-                    spaceBetween: 150,
-                },
-            },
-            navigation: {
-                prevEl: prefix + "__main-slider .swiper-button-prev",
-                nextEl: prefix + "__main-slider .swiper-button-next",
-            },
-        }
-        let main = new Swiper(mainSlider, mainOptions)
-        main.controller.control = thumbs
-        //   thumbs.controller.control = main
+        },
     }
-}
-
-function singlePageSlider() {
     const prefix = "._single-page"
     const mainSlider = document.querySelector(prefix + "__main-slider")
+    const thumbsSlider = document.querySelector(prefix + "__thumbs-slider")
+    let thumbs
+    let main
+    if (thumbsSlider) {
+        thumbs = new Swiper(thumbsSlider, thumbsOptions)
+    }
     if (mainSlider) {
         const mainOptions = {
-            modules: [Navigation],
-            // allowTouchMove: true,
-            // autoplay: true,
-            observer: true,
-            observeParents: true,
-            resizeObserver: true,
-            updateOnWindowResize: true,
-            loop: true,
-            slidesPerView: 1,
-            loopedSlides: 2,
-            spaceBetween: 200,
-            breakpoints: {
-                1321: {
-                    spaceBetween: 150,
+            ...commonMainOptions,
+            ...{
+                modules: [Navigation],
+                navigation: {
+                    prevEl: prefix + "__main-slider .swiper-button-prev",
+                    nextEl: prefix + "__main-slider .swiper-button-next",
                 },
             },
-            navigation: {
-                prevEl: prefix + "__main-slider .swiper-button-prev",
-                nextEl: prefix + "__main-slider .swiper-button-next",
-            },
         }
-        let main = new Swiper(mainSlider, mainOptions)
+        if (thumbsSlider) {
+            Object.assign(mainOptions, {
+                modules: [Thumbs, Controller, Autoplay, Navigation],
+                thumbs: {
+                    swiper: thumbs,
+                },
+            })
+        }
+        main = new Swiper(mainSlider, mainOptions)
+        if (thumbsSlider) {
+            main.controller.control = thumbs
+        }
     }
 }
