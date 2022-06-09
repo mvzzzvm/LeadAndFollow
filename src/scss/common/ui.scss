@@ -274,8 +274,8 @@ address {
     }
     .swiper-slide {
         flex: 0 0 100%;
-        opacity: 0.1;
-        transition: opacity 0.5s;
+        // opacity: 0.1;
+        // transition: opacity 0.5s;
         // outline: 5px solid rgba(lightblue, 0.3);
         &-active {
             opacity: 1;
