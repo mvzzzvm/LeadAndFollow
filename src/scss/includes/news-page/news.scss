@@ -38,14 +38,6 @@
     backdrop-filter: blur(15px);
     border: 1px solid #e1e1e1;
     border-radius: 20px;
-    a {
-        transition: color 0.3s;
-        @media (any-hover: hover) {
-            &:hover {
-                color: $lightBlue;
-            }
-        }
-    }
     @media (max-width: 603 + px) {
         flex-direction: column;
     }
@@ -86,6 +78,14 @@
         color: #c4c4c4;
         font-weight: 700;
         margin-bottom: 10px;
+    }
+    &__link {
+        @media (any-hover: hover) {
+            transition: color 0.3s;
+            &:hover {
+                color: $lightBlue;
+            }
+        }
     }
     // .news-item__title
     &__title {
