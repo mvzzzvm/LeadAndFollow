@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.html', {title: 'Social Dancing'})
+
+
+<body class="single-class-page _inner-page _single-page _simple-first-screen">
+    @@include('html/header.html', {active: 'news'})
+    <main class="main wrapper">
+        @@include('html/single-class-page/first-screen.html', {title: 'Social Dancing', img:
+        '@img/inner-page/first-screen/single-class-page.jpg'})
+        @@include('html/single-class-page/single-class.html')
+        @@include('html/start.html')
+    </main>
+    @@include('html/footer.html')
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
