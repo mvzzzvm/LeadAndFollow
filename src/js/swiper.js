@@ -41,6 +41,13 @@ const mainSwiperOptions = {
 }
 
 export function initSliders() {
+    indexSlider()
+    teachersSlider(".teachers")
+    awardsSlider(".awards")
+    // singeNewsSlider()
+    singlePageSlider()
+}
+function indexSlider() {
     const mainSlider = document.querySelector(".first-screen__slider")
     const thumbsSlider = document.querySelector(".first-screen__thumbs-slider")
     if (mainSlider && thumbsSlider) {
@@ -110,7 +117,9 @@ export function initSliders() {
             prevWidth = window.innerWidth
         })
     }
-    const teachersSliderEl = document.querySelector(".teachers__slider")
+}
+function teachersSlider(selector) {
+    const teachersSliderEl = document.querySelector(selector + "__slider")
     if (teachersSliderEl) {
         const teachersSliderOptions = {
             modules: [Pagination, Navigation],
@@ -122,11 +131,11 @@ export function initSliders() {
             autoHeight: true,
             slidesPerView: 1,
             navigation: {
-                nextEl: ".teachers__slider .swiper-button-next",
-                prevEl: ".teachers__slider .swiper-button-prev",
+                nextEl: selector + "__slider .swiper-button-next",
+                prevEl: selector + "__slider .swiper-button-prev",
             },
             pagination: {
-                el: ".teachers__container .swiper-pagination",
+                el: selector + "__container .swiper-pagination",
                 type: "bullets",
                 clickable: true,
             },
@@ -167,7 +176,9 @@ export function initSliders() {
             prevWidth = window.innerWidth
         }
     }
-    const awardsSliderEl = document.querySelector(".awards__slider")
+}
+function awardsSlider(selector) {
+    const awardsSliderEl = document.querySelector(selector + "__slider")
     if (awardsSliderEl) {
         const awardsSliderOptions = {
             modules: [Pagination, Navigation],
@@ -179,11 +190,11 @@ export function initSliders() {
             autoHeight: true,
             slidesPerView: 1,
             navigation: {
-                nextEl: ".awards__slider .swiper-button-next",
-                prevEl: ".awards__slider .swiper-button-prev",
+                nextEl: selector + "__slider .swiper-button-next",
+                prevEl: selector + "__slider .swiper-button-prev",
             },
             pagination: {
-                el: ".awards__container .swiper-pagination",
+                el: selector + "__container .swiper-pagination",
                 type: "bullets",
                 clickable: true,
             },
@@ -202,10 +213,7 @@ export function initSliders() {
         }
         const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
     }
-    // singeNewsSlider()
-    singlePageSlider()
 }
-
 // deprecated
 function singeNewsSlider() {
     const prefix = "._single-page"
