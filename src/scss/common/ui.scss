@@ -267,7 +267,7 @@ address {
     }
 }
 [class*="__slider"],
-[calss*="-slider"] {
+[class*="-slider"] {
     .swiper-wrapper {
         display: flex;
         align-items: start;
@@ -507,6 +507,13 @@ address {
         }
     }
 }
+._simple-first-screen {
+    .first-screen__title {
+        margin-top: 70px;
+        @include abetweenvalue("font-size", 100, 60, $phone, 48);
+        @include avalue("margin-top", 70, 30);
+    }
+}
 .pagination {
     display: flex;
     justify-content: center;
@@ -595,13 +602,13 @@ address {
 %blurry-dot {
     position: absolute;
     content: "";
-    // @include size(793);
     @include avalue("width", 793, 327);
     @include avalue("height", 793, 327);
     background: rgba(52, 131, 199, 0.2);
     // filter: blur(264px);
     filter: blur(150px);
     border-radius: 50%;
+    z-index: 1;
 }
 %blurry-dots {
     position: relative;
