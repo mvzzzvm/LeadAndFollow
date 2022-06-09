@@ -203,7 +203,7 @@ export function initSliders() {
         const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
     }
     singeNewsSlider()
-    singeSpecialEventSlider()
+    singlePageSlider()
 }
 function singeNewsSlider() {
     const prefix = ".news-content"
@@ -269,9 +269,10 @@ function singeNewsSlider() {
         //   thumbs.controller.control = main
     }
 }
-function singeSpecialEventSlider() {
-    const prefix = ".special-event"
-    const mainSlider = document.querySelector(prefix + "__slider")
+
+function singlePageSlider() {
+    const prefix = "._single-page"
+    const mainSlider = document.querySelector(prefix + "__main-slider")
     if (mainSlider) {
         const mainOptions = {
             modules: [Navigation],
@@ -291,8 +292,8 @@ function singeSpecialEventSlider() {
                 },
             },
             navigation: {
-                prevEl: prefix + "__slider .swiper-button-prev",
-                nextEl: prefix + "__slider .swiper-button-next",
+                prevEl: prefix + "__main-slider .swiper-button-prev",
+                nextEl: prefix + "__main-slider .swiper-button-next",
             },
         }
         let main = new Swiper(mainSlider, mainOptions)
