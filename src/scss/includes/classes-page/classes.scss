@@ -115,6 +115,14 @@
         margin-bottom: 17px;
         font-weight: 700;
     }
+    &__link {
+        @media (any-hover: hover) {
+            transition: color 0.3s;
+            &:hover {
+                color: $lightBlue;
+            }
+        }
+    }
     // .class__text
     &__text {
         font-size: 12px;
