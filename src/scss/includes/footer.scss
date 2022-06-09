@@ -137,10 +137,8 @@
         }
     }
 }
-.prices-page,
-.classes-page,
-.special-events-page,
-.special-event-page {
+._inner-page,
+._single-page {
     .footer {
         margin-top: -150px;
         @media (max-width: $smallPhone + px) {
