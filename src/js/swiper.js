@@ -9,42 +9,10 @@ function buildSliders(enableZoom = false) {
     })
 }
 
-const mainSwiperOptions = {
-    pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-        // type: "custom",
-        // renderCustom: renderCustom,
-        //
-    },
-    // parallax: true,
-    // width: defaultSliderWidth,
-    spaceBetween: 30,
-    on: {
-        init: function () {
-            slideCountEl = document.querySelector(".main-block__pagination-last-page-num")
-            changePageIndex(this)
-        },
-        slideChange: function () {
-            changePageIndex(this)
-            document
-                .querySelectorAll(".swiper-pagination-bullet")
-                .forEach((el) => el.classList.remove("swiper-pagination-bullet-active"))
-            const activeSlide = document.querySelector(
-                ".swiper-pagination-bullet:nth-of-type(" + (this.realIndex + 1) + ")"
-            )
-            if (activeSlide) activeSlide.classList.add("swiper-pagination-bullet-active")
-        },
-    },
-    loop: true,
-}
-
 export function initSliders() {
     indexSlider()
     teachersSlider(".teachers")
     awardsSlider(".awards")
-    // singeNewsSlider()
     singlePageSlider()
 }
 function indexSlider() {
@@ -214,45 +182,6 @@ function awardsSlider(selector) {
         const awardsSlider = new Swiper(awardsSliderEl, awardsSliderOptions)
     }
 }
-// deprecated
-function singeNewsSlider() {
-    const prefix = "._single-page"
-    const mainSlider = document.querySelector(prefix + "__main-slider")
-    const thumbsSlider = document.querySelector(prefix + "__thumbs-slider")
-    if (mainSlider && thumbsSlider) {
-        let thumbs = new Swiper(thumbsSlider, thumbsOptions)
-
-        const mainOptions = {
-            modules: [Thumbs, Controller, Autoplay, Navigation],
-            allowTouchMove: true,
-            // autoplay: true,
-            observer: true,
-            observeParents: true,
-            resizeObserver: true,
-            updateOnWindowResize: true,
-            loop: true,
-            slidesPerView: 1,
-            loopedSlides: 6,
-            spaceBetween: 200,
-            breakpoints: {
-                1321: {
-                    spaceBetween: 150,
-                },
-            },
-            navigation: {
-                prevEl: prefix + "__main-slider .swiper-button-prev",
-                nextEl: prefix + "__main-slider .swiper-button-next",
-            },
-            thumbs: {
-                swiper: thumbs,
-            },
-        }
-        let main = new Swiper(mainSlider, mainOptions)
-        main.controller.control = thumbs
-        //   thumbs.controller.control = main
-    }
-}
-
 function singlePageSlider() {
     const loopedSlides = 6
     const commonOptions = {
