@@ -52,8 +52,8 @@
         @media (max-width: $phone + px) {
             margin-top: 32px;
             margin-bottom: 32px;
-            margin-left: -35px;
-            margin-right: -35px;
+            // margin-left: -35px;
+            // margin-right: -35px;
         }
         @media (max-width: $smallPhone + px) {
             margin-left: 0;
@@ -82,7 +82,7 @@
         max-width: 1026px;
         @media (max-width: 1320 + px) {
             width: pc(545, $phone);
-            margin: 0 auto 12px;
+            margin: 0 auto;
         }
         @media (max-width: $smallPhone + px) {
             position: static;
@@ -136,16 +136,35 @@
             }
         }
     }
+    &__thumbs-slider-wrapper {
+        width: 100%;
+        max-width: 1026 + 300px;
+        margin: 0 auto;
+        padding: 0 150px;
+        // outline: 1px solid red;
+        @media (max-width: 1320 + px) {
+            padding: 0;
+        }
+        @media (max-width: $smallPhone + px) {
+            position: relative;
+        }
+    }
     &__thumbs-slider {
         width: 100%;
         max-width: 1026px;
         margin-top: 42px;
+        // transform: translateX(20%);
         // outline: 1px solid;
         @media (max-width: 1320 + px) {
-            margin-top: 12px;
+            margin: 12px auto 0;
+            width: pc(545, $phone);
         }
         @media (max-width: $phone + px) {
+            transform: none;
             overflow: hidden;
+            width: 100%;
+        }
+        @media (max-width: $smallPhone + px) {
         }
         .swiper-slide {
             // width: 186px;
@@ -164,8 +183,11 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
+                top: 0;
+                left: 0;
                 background-color: #fff;
                 opacity: 0.8;
+                z-index: 1;
             }
             @media (max-width: $phone + px) {
                 flex: 0 0 calc((100% - 10px) / 7 - 9px);
