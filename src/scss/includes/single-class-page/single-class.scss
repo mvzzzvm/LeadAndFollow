@@ -1,0 +1,24 @@
+.single-class {
+    // .single-class__container
+    &__container {
+    }
+    // .single-class__text
+    &__body {
+    }
+    // .single-class__sliders
+    &__sliders {
+    }
+    &__slider {
+        .swiper-wrapper {
+        }
+        .swiper-slide {
+        }
+        .swiper-button-prev {
+        }
+        .swiper-button-next {
+        }
+    }
+    // .single-class__slider-wrapper
+    &__slider-wrapper {
+    }
+}
