@@ -219,6 +219,12 @@ address {
         @media (max-width: $phone + px) {
         }
     }
+    @media (any-hover: hover) {
+        transition: color 0.3s;
+        &:hover {
+            color: $lightBlue;
+        }
+    }
 }
 .menu {
     &__list {
