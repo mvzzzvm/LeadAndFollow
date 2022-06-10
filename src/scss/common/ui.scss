@@ -197,6 +197,12 @@ address {
             font-size: 17px;
         }
     }
+    @media (any-hover: hover) {
+        transition: color 0.3s;
+        &:hover {
+            color: $lightBlue;
+        }
+    }
 }
 ._no-arrow-button {
     text-transform: uppercase;

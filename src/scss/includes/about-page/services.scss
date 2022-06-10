@@ -89,6 +89,14 @@
     &__body {
         flex-grow: 1;
     }
+    &__link {
+        @media (any-hover: hover) {
+            transition: color 0.3s;
+            &:hover {
+                color: $lightBlue;
+            }
+        }
+    }
     // .service__title
     &__title {
         font-size: 54px;
