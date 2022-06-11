@@ -46,10 +46,10 @@
     &__slider {
         max-width: none;
         &:not(:first-child) {
-            margin-top: 60px;
+            @include avalue("margin-top", 60, 20);
         }
         &:not(:last-child) {
-            margin-bottom: 60px;
+            @include avalue("margin-bottom", 60, 20);
         }
         // outline: 1px solid red;
         @media (max-width: $phone + px) {
