@@ -1,20 +1,22 @@
 .classes {
+    padding: 50px 0 75px;
     position: relative;
+    @media (max-width: $smallPhone + px) {
+        padding: 30px 0;
+    }
     ._decor-fabric {
         &::before {
             @extend %fabric;
             top: 0;
-            height: 847px;
-            transform: translate(-50%, 0);
-            // outline: 1px solid red;
+            height: 603px;
+            transform: translate(-50%, 20%);
         }
         &::after {
             @extend %fabric;
             top: auto;
             bottom: 0;
-            height: 847px;
-            transform: translate(-50%, 30%);
-            // outline: 1px solid green;
+            height: 603px;
+            transform: translate(-50%, 25%) scaleX(-1);
         }
     }
     // .classes__container
@@ -34,7 +36,6 @@
     }
     // .classes__list
     &__list {
-        margin-top: 48px;
         gap: 64px;
         display: flex;
         flex-direction: column;

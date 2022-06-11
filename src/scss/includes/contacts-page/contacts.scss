@@ -34,7 +34,7 @@
         // .contacts__body
         &__body {
             @include avalue("padding-top", 30, 0);
-            @include avalue("padding-bottom", 80, 20);
+            @include avalue("padding-bottom", 50, 30);
             margin: 0;
             width: auto;
             height: auto;

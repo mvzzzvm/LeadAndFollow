@@ -1,12 +1,12 @@
 .special-events {
-    padding: 50px 0 100px + 150px - 20px 0;
+    padding-top: 50px;
     position: relative;
     &::before {
         @extend %fabric;
         top: auto;
         bottom: 0;
-        opacity: 0.5;
-        transform: translate(-50%, 10%) scaleX(-1);
+        opacity: 1;
+        transform: translate(-50%, 2%) scaleX(-1);
         background-position: center bottom;
     }
     @media (max-width: $phone + px) {
@@ -52,173 +52,173 @@
     &__list-item {
     }
     &__pagination {
-        margin-top: 37px + 50px;
+        margin: 17px + 50px auto;
         @media (max-width: $phone + px) {
-            margin-top: 37px + 50px - 20px;
+            margin: 17px + 50px - 20px auto;
         }
         @media (max-width: $smallPhone + px) {
-            margin-top: 30px;
+            margin: 30px auto;
         }
     }
 }
 .special-events {
-.special-event {
-    flex: 0 0 calc(50% - 13px);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    border: 1px solid #e1e1e1;
-    display: flex;
-    flex-direction: column;
-    @media (max-width: $phone + px) {
-        flex: 0 0 calc(50% - 15px);
-    }
-    @media (max-width: $smallPhone + px) {
-        flex: 0 0 100%;
-        border-radius: 10px;
-    }
-    &--highlighted {
-        flex: 0 0 100%;
-        margin-bottom: 37 - 15px;
-        @media (max-width: $smallPhone + px) {
-            margin-bottom: 20px;
-        }
-        .special-event__text {
-            display: block;
-        }
-        .special-event__body {
-            padding: 33px 20px 18px 45px;
-            @media (max-width: $phone + px) {
-                padding: 18px 30px 23px 25px;
-            }
-            @media (max-width: $smallPhone + px) {
-                padding: 15px 10px 6px 10px;
-            }
-        }
-        .special-event__image {
-            padding-top: pc(450, 1026);
-        }
-        .special-event__date {
-        }
-        .special-event__title {
-            font-size: 26px;
-            line-height: math.div(30, 26);
-            margin-bottom: 5px;
-            @media (max-width: $smallPhone + px) {
-                font-size: 18px;
-            }
-            @media (max-width: $smallPhone + px) {
-                margin-bottom: 14px;
-            }
-        }
-        .special-event__location,
-        .special-event__time {
-            color: $darkBlue;
-        }
-        .special-event__button {
-            margin-top: 20px;
-            @media (max-width: $phone + px) {
-                margin-top: 12px;
-            }
-        }
-    }
-    &__link,
-    &__button {
-        transition: color 0.3s;
-        @media (any-hover: hover) {
-            &:hover {
-                color: $lightBlue;
-            }
-        }
-    }
-    &__info {
-        flex-grow: 1;
+    .special-event {
+        flex: 0 0 calc(50% - 13px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        border: 1px solid #e1e1e1;
         display: flex;
         flex-direction: column;
-    }
-    // .special-event__image
-    &__image {
-        padding-top: pc(274, 498);
-        position: relative;
-        img {
-            border-radius: 20px 20px 0 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            @media (max-width: $smallPhone + px) {
-                border-radius: 10px 10px 0 0;
-            }
-        }
-    }
-    // .special-event__body
-    &__body {
-        padding: 30px 20px 20px 13px;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
         @media (max-width: $phone + px) {
-            padding: 11px 22px 15px 10px;
+            flex: 0 0 calc(50% - 15px);
         }
         @media (max-width: $smallPhone + px) {
-            padding: 7px 10px 10px 10px;
+            flex: 0 0 100%;
+            border-radius: 10px;
         }
-    }
-    // .special-event__date
-    &__date {
-        color: #c4c4c4;
-        margin-bottom: 9px;
-        font-weight: 700;
-        font-size: 12px;
-        @media (max-width: $smallPhone + px) {
-            font-size: 10px;
-        }
-    }
-    // .special-event__title
-    &__title {
-        font-weight: 700;
-        margin-bottom: 10px;
-        @media (max-width: $smallPhone + px) {
-            font-size: 10px;
-        }
-    }
-    // .special-event__location
-    &__location,
-    &__time {
-        font-size: 12px;
-        line-height: math.div(14, 12);
-        color: #939598;
-        @media (max-width: $smallPhone + px) {
-            font-size: 10px;
-        }
-    }
-    // .special-event__text
-    &__text {
-        display: none;
-        font-size: 12px;
-        line-height: math.div(18, 12);
-        margin-top: 15px;
-        max-width: pc(875, 1026);
-        p {
-            &:not(:last-child) {
+        &--highlighted {
+            flex: 0 0 100%;
+            margin-bottom: 37 - 15px;
+            @media (max-width: $smallPhone + px) {
                 margin-bottom: 20px;
             }
+            .special-event__text {
+                display: block;
+            }
+            .special-event__body {
+                padding: 33px 20px 18px 45px;
+                @media (max-width: $phone + px) {
+                    padding: 18px 30px 23px 25px;
+                }
+                @media (max-width: $smallPhone + px) {
+                    padding: 15px 10px 6px 10px;
+                }
+            }
+            .special-event__image {
+                padding-top: pc(450, 1026);
+            }
+            .special-event__date {
+            }
+            .special-event__title {
+                font-size: 26px;
+                line-height: math.div(30, 26);
+                margin-bottom: 5px;
+                @media (max-width: $smallPhone + px) {
+                    font-size: 18px;
+                }
+                @media (max-width: $smallPhone + px) {
+                    margin-bottom: 14px;
+                }
+            }
+            .special-event__location,
+            .special-event__time {
+                color: $darkBlue;
+            }
+            .special-event__button {
+                margin-top: 20px;
+                @media (max-width: $phone + px) {
+                    margin-top: 12px;
+                }
+            }
         }
-        @media (max-width: $phone + px) {
-            max-width: 100%;
+        &__link,
+        &__button {
+            transition: color 0.3s;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $lightBlue;
+                }
+            }
         }
-        @media (max-width: $smallPhone + px) {
-            font-size: 10px;
+        &__info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        // .special-event__image
+        &__image {
+            padding-top: pc(274, 498);
+            position: relative;
+            img {
+                border-radius: 20px 20px 0 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @media (max-width: $smallPhone + px) {
+                    border-radius: 10px 10px 0 0;
+                }
+            }
+        }
+        // .special-event__body
+        &__body {
+            padding: 30px 20px 20px 13px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            @media (max-width: $phone + px) {
+                padding: 11px 22px 15px 10px;
+            }
+            @media (max-width: $smallPhone + px) {
+                padding: 7px 10px 10px 10px;
+            }
+        }
+        // .special-event__date
+        &__date {
+            color: #c4c4c4;
+            margin-bottom: 9px;
+            font-weight: 700;
+            font-size: 12px;
+            @media (max-width: $smallPhone + px) {
+                font-size: 10px;
+            }
+        }
+        // .special-event__title
+        &__title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            @media (max-width: $smallPhone + px) {
+                font-size: 10px;
+            }
+        }
+        // .special-event__location
+        &__location,
+        &__time {
+            font-size: 12px;
+            line-height: math.div(14, 12);
+            color: #939598;
+            @media (max-width: $smallPhone + px) {
+                font-size: 10px;
+            }
+        }
+        // .special-event__text
+        &__text {
+            display: none;
+            font-size: 12px;
+            line-height: math.div(18, 12);
+            margin-top: 15px;
+            max-width: pc(875, 1026);
+            p {
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+            @media (max-width: $phone + px) {
+                max-width: 100%;
+            }
+            @media (max-width: $smallPhone + px) {
+                font-size: 10px;
+            }
+        }
+        // .special-event__button
+        &__button {
+            align-self: end;
+            font-size: 12px;
+            &::before {
+            }
         }
     }
-    // .special-event__button
-    &__button {
-        align-self: end;
-        font-size: 12px;
-        &::before {
-        }
-    }
-}
 }
