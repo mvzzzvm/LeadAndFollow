@@ -50,9 +50,13 @@
         }
     }
     &__slider {
-        // margin-top: 60px;
-        margin-bottom: 60px;
         max-width: none;
+        &:not(:first-child) {
+            margin-top: 60px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
         // outline: 1px solid red;
         @media (max-width: $phone + px) {
             margin-top: 32px;

@@ -197,7 +197,6 @@ function singlePageSlider() {
             updateOnWindowResize: true,
             loop: true,
             slidesPerView: 1,
-            loopedSlides: loopedSlides,
             spaceBetween: 200,
             breakpoints: {
                 1321: {
