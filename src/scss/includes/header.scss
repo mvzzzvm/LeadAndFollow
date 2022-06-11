@@ -2,6 +2,7 @@
     @include avalue("height", 86, 41);
     padding-top: 15px;
     overflow-x: clip;
+    position: relative;
     @media (max-width: $phone + px) {
         padding-top: 4px;
     }
@@ -123,9 +124,9 @@
         position: absolute;
         padding: 40px 0 40px 0;
         left: 0;
-        bottom: 0;
+        top: 100%;
         width: 100%;
-        transform: translate(-100%, 100%);
+        transform: translate(-100%, 0);
         transition: transform 0.3s;
         display: flex;
         flex-direction: column;
@@ -149,7 +150,7 @@
         font-size: 18px;
     }
     .header__navigation {
-        transform: translate(0%, 100%);
+        transform: translate(0%, 0);
         &::before {
             content: "";
         }
