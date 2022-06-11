@@ -11,13 +11,11 @@
         max-width: 100%;
         overflow-x: clip;
     }
-    // .special-event__container
     &__container {
         max-width: 1026 + 300px;
         position: relative;
         @extend %blurry-dots;
     }
-    // .special-event__body
     &__body {
         color: #122735;
         font-size: 16px;
@@ -61,15 +59,12 @@
         @media (max-width: $phone + px) {
             margin-top: 32px;
             margin-bottom: 32px;
-            // margin-left: -35px;
-            // margin-right: -35px;
         }
         @media (max-width: $smallPhone + px) {
             margin-left: 0;
             margin-right: 0;
         }
     }
-    // .special-event__slider-wrapper
     &__main-slider-wrapper {
         overflow: hidden;
         width: 100%;
@@ -84,7 +79,6 @@
             position: relative;
         }
     }
-    // .special-event__slider
     &__main-slider {
         position: relative;
         width: 100%;
@@ -258,47 +252,41 @@
         @media (max-width: $smallPhone + px) {
             margin-bottom: 25px;
         }
+        &--left,
         &--right {
             width: pc(291, 803);
-            float: right;
-            margin-left: 30px;
-            margin-right: math.div($maxWidthContainer - 803px, -2);
             img {
                 filter: none;
             }
+            ._single-page__text-image-caption {
+                width: 100%;
+                text-align: left;
+            }
+        }
+        &--right {
+            float: right;
+            margin-left: 30px;
+            margin-right: math.div($maxWidthContainer - 803px, -2);
             @media (max-width: 1320 + px) {
                 margin-right: 0;
             }
             @media (max-width: $smallPhone + px) {
                 margin-left: 10px;
             }
-            .news-content__text-image-caption {
-                width: 100%;
-                text-align: left;
-            }
         }
         &--left {
-            width: pc(291, 803);
             float: left;
             overflow: hidden;
             margin-right: 30px;
             margin-left: math.div($maxWidthContainer - 803px, -2);
-            img {
-                filter: none;
-            }
             @media (max-width: 1320 + px) {
                 margin-left: 0;
             }
             @media (max-width: $smallPhone + px) {
                 margin-right: 10px;
             }
-            .news-content__text-image-caption {
-                width: 100%;
-                text-align: left;
-            }
         }
     }
-    // .news-content__text-image-caption
     &__text-image-caption {
         font-size: 10px;
         line-height: 1.6;
