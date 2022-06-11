@@ -183,19 +183,18 @@ function awardsSlider(selector) {
     }
 }
 function singlePageSlider() {
-    const loopedSlides = 6
     const commonOptions = {
         observer: true,
         observeParents: true,
         // allowTouchMove: true,
-        loopedSlides: loopedSlides,
+        // loopedSlides: 6,
+        loop: true,
     }
     const commonMainOptions = {
         ...commonOptions,
         ...{
             resizeObserver: true,
             updateOnWindowResize: true,
-            loop: true,
             slidesPerView: 1,
             spaceBetween: 200,
             breakpoints: {
@@ -210,7 +209,6 @@ function singlePageSlider() {
         ...{
             modules: [Controller],
             slidesPerGroup: 1,
-            loop: true,
             slidesPerView: 4,
             spaceBetween: 8,
             breakpoints: {
