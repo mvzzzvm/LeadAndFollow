@@ -2,7 +2,6 @@
     @include avalue("height", 86, 41);
     padding-top: 15px;
     overflow-x: clip;
-    position: relative;
     @media (max-width: $phone + px) {
         padding-top: 4px;
     }
@@ -121,27 +120,25 @@
     }
     // .header__navigation
     &__navigation {
-        position: absolute;
-        padding: 40px 0 40px 0;
+        position: fixed;
         left: 0;
-        top: 100%;
+        top: 45px;
         width: 100%;
+        height: 100%;
+        overflow: auto;
         transform: translate(-100%, 0);
         transition: transform 0.3s;
+        z-index: 10;
+        background-color: rgba(#000, 0.6);
+        @media (max-width: $smallPhone + px) {
+            top: 35px;
+        }
+    }
+    &__navigation-inner {
+        padding: 40px 0 40px 0;
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        z-index: 10;
-        &:before {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            transform: translate(0, 100%);
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(#000, 0.5);
-            z-index: 100;
-        }
     }
 }
 .menu--open {
