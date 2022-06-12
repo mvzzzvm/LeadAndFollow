@@ -5,26 +5,7 @@
                 <img src="@img/footer/footer-logo.svg" alt="Lead & Follow Dance School">
             </a>
             <nav class="footer__menu menu">
-                <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="!#" class="menu__link">about us</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="!#" class="menu__link">News</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="!#" class="menu__link">Classes</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="!#" class="menu__link">Special Events</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="!#" class="menu__link">Prices</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="!#" class="menu__link">Contacts</a>
-                    </li>
-                </ul>
+                @@include('menu.html', {active: "@@active"})
             </nav>
             <div class="footer__lower-footer">
                 <div class="footer__contacts">
