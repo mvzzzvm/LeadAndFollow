@@ -86,15 +86,19 @@
             }
             &--active {
                 color: $lightBlue;
-                border-color: $lightBlue;
-                @media (max-width: $phone + px) {
-                    border-color: transparent;
+                &::before {
+                    background-color: $lightBlue;
+                    @media (max-width: $phone + px) {
+                        background-color: transparent;
+                    }
                 }
             }
             @media (any-hover: hover) {
                 &:hover {
                     color: $lightBlue;
-                    border-color: $lightBlue;
+                    &::before {
+                        background-color: $lightBlue;
+                    }
                 }
             }
         }

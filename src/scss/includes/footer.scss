@@ -54,6 +54,30 @@
         @media (max-width: $smallPhone + px) {
             display: none;
         }
+        .menu__link {
+            @media (max-width: $phone + px) {
+                padding: 10px 0;
+                display: block;
+                &::before {
+                    background-color: transparent;
+                }
+            }
+            &--active {
+                &::before {
+                    background-color: #fff;
+                    @media (max-width: $phone + px) {
+                        background-color: transparent;
+                    }
+                }
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    &::before {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
     }
     // .footer__contacts
     &__contacts {

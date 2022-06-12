@@ -242,7 +242,19 @@ address {
         text-transform: uppercase;
     }
     &__link {
-        transition: color 0.3s, border-color 0.3s;
+        transition: color 0.3s;
+        position: relative;
+        &::before {
+            content: "";
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            margin-top: 3px;
+            background-color: transparent;
+        }
     }
 }
 .social-list {
