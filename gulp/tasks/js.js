@@ -37,9 +37,9 @@ export const js = () => {
                 //       import: './src/js/modules/photoswipe.js',
                 //    },
                 // lazyload: "./src/js/lazyload.min.js",
-                //    swiper: {
-                //       import: './src/js/modules/swiper.js',
-                //    },
+                swiper: {
+                    import: './src/js/modules/swiper.js',
+                },
                 // popup: [
                 //    "./src/js/modules/popup.js",
                 //    "./src/js/modules/scrollToTop.js" /* "./src/js/modules/spoiler.js" */,

@@ -1,18 +1,12 @@
 import { isWebpSupported } from "./modules/functions.js"
 isWebpSupported()
 
-import { initSliders } from "./swiper.js"
-
 import { burger } from "./modules/burger.js"
 burger()
 
 import { DynamicAdapt } from "./modules/dynamic-adapt.js"
 const da = new DynamicAdapt("max")
 da.init()
-
-document.addEventListener("DOMContentLoaded", function () {
-    initSliders()
-})
 
 import { servisesResizer } from "./modules/resizer.js"
 servisesResizer()

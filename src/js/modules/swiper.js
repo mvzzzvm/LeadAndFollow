@@ -262,3 +262,4 @@ function singlePageSlider() {
         }
     }
 }
+initSliders()
