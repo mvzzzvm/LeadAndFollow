@@ -44,12 +44,35 @@ body {
 main {
     overflow: hidden;
     max-width: 100%;
-    padding-bottom: 150px;
-    @media (max-width: $phone + px) {
-        padding-bottom: 100px;
-    }
-    @media (max-width: $smallPhone + px) {
-        padding-bottom: 50px;
+}
+.index { 
+    main {
+        margin-bottom: -110px;
+        @media (max-width: 1920px) {
+            margin-bottom: -123px;
+        }
+        @media (max-width: 1536px) {
+            margin-bottom: -140px;
+        }
+        @media (max-width: 1440px) {
+            margin-bottom: -150px;
+        }
+        @media (max-width: $phone + px) {
+            padding-bottom: 100px;
+        }
+        @media (max-width: $smallPhone + px) {
+            padding-bottom: 50px;
+        }
+        @media (max-width: 1440 + px) {
+            margin-bottom: -160px;
+        }
+        @media (max-width: 1100 + px) {
+            margin-bottom: -170px;
+        }
+        @media (max-width: $phone + px) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
     }
 }
 .wrapper {
@@ -58,8 +81,8 @@ main {
     // overflow: hidden;
     display: flex;
     flex-direction: column;
-    &._loaded {
-    }
+    margin-bottom: -160px;
+    padding-bottom: 160px;
     > main {
         // footer to the floor
         flex: 1 1 auto;

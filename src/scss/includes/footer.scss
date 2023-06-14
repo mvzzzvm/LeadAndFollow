@@ -14,6 +14,7 @@
         background: center bottom / contain no-repeat url(../../img/footer/footer-bg.svg);
         @media (max-width: $phone + px) {
             background-image: url(../../img/footer/footer-bg-tablet.svg);
+            background: linear-gradient(200deg, #3483C7, #073773);
         }
     }
     // .footer__container
