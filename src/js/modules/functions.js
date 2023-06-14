@@ -1,5 +1,6 @@
-export function isWebp() {
-   document.documentElement.classList.add("webp")
+export function isWebpSupported() {
+   if(!document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0)
+   document.documentElement.classList.remove("webp")
 }
 export function getPropertyValue(el, prop) {
    return parseInt(getComputedStyle(el)[prop])

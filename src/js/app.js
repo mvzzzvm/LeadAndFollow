@@ -1,7 +1,7 @@
-import * as functions from "./modules/functions.js"
-import { initSliders } from "./swiper.js"
+import { isWebpSupported } from "./modules/functions.js"
+isWebpSupported()
 
-functions.isWebp()
+import { initSliders } from "./swiper.js"
 
 import { burger } from "./modules/burger.js"
 burger()
