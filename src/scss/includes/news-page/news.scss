@@ -22,9 +22,6 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-        &:not(:last-child) {
-            margin-bottom: 64px;
-        }
     }
     // .news__list-item
     &__list-item {
@@ -70,6 +67,12 @@
         padding: 14px 27px;
         display: flex;
         flex-direction: column;
+        @media (max-width: 603px) {
+            padding: 15px;
+        }
+        @media (max-width: 440px) {
+            padding: 18px 10px;
+        }
     }
     &__date {
         font-size: 12px;
