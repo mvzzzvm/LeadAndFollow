@@ -51,7 +51,10 @@ function indexSlider() {
         const mainOptions = {
             modules: [Thumbs, Controller, Autoplay],
             // allowTouchMove: true,
-            // autoplay: true,
+            autoplay: {
+                disableOnInteraction: false,
+                delay: 5000
+            },
             observer: true,
             observeParents: true,
             resizeObserver: true,
