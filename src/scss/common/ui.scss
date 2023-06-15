@@ -559,6 +559,13 @@ address {
 .pagination {
     display: flex;
     justify-content: center;
+    margin: 17px + 50px auto;
+    @media (max-width: $phone + px) {
+        margin: 17px + 50px - 20px auto;
+    }
+    @media (max-width: $smallPhone + px) {
+        margin: 30px auto;
+    }
     // .pagination__list
     &__list {
         display: flex;
@@ -573,6 +580,7 @@ address {
     // .pagination__button
     &__button {
         @include size(47);
+        flex-shrink: 0;
         cursor: pointer;
         font-size: 12px;
         line-height: 1;
@@ -595,7 +603,7 @@ address {
     }
     // .pagination__button--disabled
     &__button--disabled {
-        cursor: auto;
+        cursor: not-allowed;
         color: #939598;
         &::before {
             color: #939598;

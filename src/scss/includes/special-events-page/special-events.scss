@@ -45,15 +45,6 @@
     // .special-events__list-item
     &__list-item {
     }
-    &__pagination {
-        margin: 17px + 50px auto;
-        @media (max-width: $phone + px) {
-            margin: 17px + 50px - 20px auto;
-        }
-        @media (max-width: $smallPhone + px) {
-            margin: 30px auto;
-        }
-    }
 }
 .special-events {
     .special-event {
