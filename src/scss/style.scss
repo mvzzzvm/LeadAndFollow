@@ -81,8 +81,10 @@ main {
     // overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin-bottom: -160px;
-    padding-bottom: 160px;
+    @media (min-width: 768.02px) {
+        margin-bottom: -160px;
+        padding-bottom: 160px;
+    }
     > main {
         // footer to the floor
         flex: 1 1 auto;
