@@ -31,7 +31,7 @@
             height: 41px;
             width: 433px;
             transform: translate(0, 100%);
-            background: no-repeat url(../../img/header/swosh.svg);
+            background: no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="0 0 4320 410"><path d="M4320 0c-990 48-1825 404-2920 410-346-2-546-45-1220-203L0 161V0h4320Z" fill="%23fff"/></svg>');
             background-position: center;
             z-index: -1;
             @media (max-width: $phone + px) {
