@@ -145,10 +145,18 @@
             .swiper-slide {
                 @include size(185, 125);
                 // flex: 0 0 125px;
-                border-radius: 5px;
                 background-color: #fff;
                 cursor: pointer;
                 position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                @media (any-hover:hover) {
+                    &:hover {
+                        img {
+                            opacity: .75;
+                        }
+                    }
+                }
                 @media (max-width: $phone + px) {
                     @include size(100, 68);
                     flex: 0 0 68px;
