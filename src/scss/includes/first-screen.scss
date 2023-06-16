@@ -146,12 +146,13 @@
             }
             .swiper-slide {
                 @include size(185, 125);
-                // flex: 0 0 125px;
-                background-color: #fff;
+                flex: 0 0 125px;
+                background-color: rgba(255, 255, 255, .8);
                 cursor: pointer;
                 position: relative;
                 border-radius: 5px;
                 overflow: hidden;
+                margin-bottom: 18px;
                 @media (any-hover:hover) {
                     &:hover {
                         img {
@@ -162,15 +163,20 @@
                 @media (max-width: $phone + px) {
                     @include size(100, 68);
                     flex: 0 0 68px;
+                    margin-bottom: 10px;
                 }
                 @media (max-width: 600px) {
                     @include size(100, 68);
                     flex: 0 0 calc(25% - 7px);
+                    margin-right: 10px;
+                    margin-bottom: 0;
                 }
                 @media (max-width: 500 - 1 +px) {
                     // @include size(66, 45);
                     flex: 0 0 calc(25% - 5px);
                     // padding-top: 25%;
+                    margin-right: 7px;
+                    margin-bottom: 0;
                 }
                 img {
                     opacity: 0.2;
