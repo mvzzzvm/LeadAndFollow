@@ -95,7 +95,7 @@ function teachersSlider(selector) {
         const teachersSliderOptions = {
             modules: [Pagination, Navigation],
             allowTouchMove: true,
-            spaceBetween: 130,
+            spaceBetween: 200,
             loop: true,
             loopedSlides: 2,
             speed: 500,
@@ -111,6 +111,9 @@ function teachersSlider(selector) {
                 clickable: true,
             },
             breakpoints: {
+                1281: {
+                    spaceBetween: 130,
+                },
                 480: {
                     pagination: {
                         dynamicBullets: false,
