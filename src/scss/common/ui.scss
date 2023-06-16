@@ -445,13 +445,12 @@ address {
             bottom: -6px;
             height: 245px;
             width: 1440px;
-            background: center top no-repeat url(../../img/first-screen/gradient-line.svg);
+            background: center top no-repeat var(--gradient-line);
             z-index: 1;
             @media (max-width: $phone + px) {
                 bottom: -113px;
                 width: 100%;
-                background: center top no-repeat
-                    url(../../img/first-screen/gradient-line-tablet.svg);
+                background: center top no-repeat var(--gradient-line-tablet);
             }
         }
         // .first-screen__container
