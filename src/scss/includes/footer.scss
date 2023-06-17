@@ -7,9 +7,10 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        left: 50%;
+        left: 0;
+        right: 0;
+        top: 0;
         bottom: 0;
-        transform: translateX(-50%);
         z-index: -1;
         background: center bottom / contain no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 185"><path d="M1440 121v43.6c-146.2-5.4-280.9-26-413.9-50.9-55.701-10.4-111.201-21.6-167.101-32.8-12.4-2.5-24.9-5-37.3-7.4-31.2-6.2-62.5-12.3-94.2-18.2-120.7-22.5-245.9-42.1-382.3-51 13.7-.4 27.7-.7 42.5-.7C781.899 5.3 1081 110.7 1440 121Z" fill="%23BBB"/><path d="M1440 164.7v20.5H0V18.8C97.3 5.4 158.5 0 228.2 0c14.8 0 29.9.3 45.8.7 24.1.9 47.8 2.1 71.2 3.6 136.4 8.9 261.6 28.5 382.3 51 31.7 5.9 63 12 94.2 18.2 12.5 2.5 24.9 5 37.3 7.4 55.9 11.2 111.3 22.4 167.1 32.9 133 24.9 267.7 45.5 413.9 50.9Z" fill="url(%23a)"/><defs><linearGradient id="a" x1="0" x2="1440" y1="92.605" y2="92.605" gradientUnits="userSpaceOnUse"><stop stop-color="%233483C7"/><stop offset="1" stop-color="%23073773"/></linearGradient></defs></svg>');
         @media (max-width: $phone + px) {
