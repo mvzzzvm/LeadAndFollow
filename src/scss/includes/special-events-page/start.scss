@@ -6,104 +6,102 @@
     &__start-block {
     }
 }
-.special-event-page {
-    .start {
-        .start-block {
-            @include abetweenvalue("width", 657, 486, $phone, 294);
-            @include abetweenvalue("height", 657, 486, $phone, 294);
-            // .start-block__title
-            &__title {
-                @media (max-width: $smallPhone + px) {
-                    margin: 0;
-                }
+.start.join-us {
+    .start-block {
+        @include abetweenvalue("width", 657, 486, $phone, 294);
+        @include abetweenvalue("height", 657, 486, $phone, 294);
+        // .start-block__title
+        &__title {
+            @media (max-width: $smallPhone + px) {
+                margin: 0;
             }
-            &__form {
-                color: #fff;
-                width: pc(420, 657);
-                @media (max-width: $smallPhone + px) {
-                    width: pc(242, 320);
-                }
-                label {
-                    font-weight: 700;
-                    font-size: 8px;
-                    line-height: math.div(9.39, 8);
-                    opacity: 0.5;
-                    color: #ffeeee;
-                    margin-left: 11px;
-                    text-transform: uppercase;
-                    text-align: left;
-                    opacity: 0;
-                    transition: opacity 0.3s;
-                }
+        }
+        &__form {
+            color: #fff;
+            width: pc(420, 657);
+            @media (max-width: $smallPhone + px) {
+                width: pc(242, 320);
             }
-            &__row {
-                display: flex;
-                flex-direction: column;
-                &:not(:last-child) {
-                    // @include avalue('margin-bottom',25, 8);
-                    margin-bottom: 5px;
-                    @media (max-width: $smallPhone + px) {
-                        margin-bottom: 0;
-                    }
-                }
-                &:focus-within {
-                    label {
-                        opacity: 1;
-                    }
-                    input::placeholder {
-                        color: transparent;
-                    }
-                }
-            }
-            // .start-block__input
-            &__input {
-                @include amaxvalue("font-size", 16, 12, $phone);
+            label {
                 font-weight: 700;
-                line-height: math.div(19, 16);
+                font-size: 8px;
+                line-height: math.div(9.39, 8);
                 opacity: 0.5;
-                padding: 8px 11px;
-                border-bottom: 1px solid #fff;
-                color: #fff;
+                color: #ffeeee;
+                margin-left: 11px;
+                text-transform: uppercase;
+                text-align: left;
+                opacity: 0;
                 transition: opacity 0.3s;
-                &:not(:placeholder-shown) {
-                    opacity: 1;
-                }
-                &:-webkit-autofill,
-                &:-webkit-autofill::first-line,
-                &:-webkit-autofill:hover,
-                &:-webkit-autofill:active,
-                &:-webkit-autofill:focus {
-                    // -webkit-box-shadow: 0 0 0 50px transparent inset;
-                    font-weight: 700 !important;
-                    // font-family:'Courier New', Courier, monospace !important;
-                    transition: background-color 600000s 0s, color 600000s 0s;
-                }
-                &:focus {
-                    opacity: 1;
-                }
-                &::placeholder {
-                    text-transform: uppercase;
-                    color: inherit;
-                    font-size: inherit;
-                    line-height: inherit;
-                }
-                &[aria-invalid="true"] {
-                    border-color: #f55;
-                    opacity: 1;
-                }
+            }
+        }
+        &__row {
+            display: flex;
+            flex-direction: column;
+            &:not(:last-child) {
+                // @include avalue('margin-bottom',25, 8);
+                margin-bottom: 5px;
                 @media (max-width: $smallPhone + px) {
-                    padding: 5px 9px;
+                    margin-bottom: 0;
                 }
             }
-            // .start-block__start-button
-            &__start-button {
-                @include abetweenvalue("padding-top", 24, 19, $phone, 10);
-                @include abetweenvalue("padding-bottom", 24, 19, $phone, 10);
-                @include abetweenvalue("padding-left", 70, 57, $phone, 45);
-                @include abetweenvalue("padding-right", 70, 57, $phone, 45);
-                @media (max-width: $smallPhone + px) {
-                    margin-top: 0;
+            &:focus-within {
+                label {
+                    opacity: 1;
                 }
+                input::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        // .start-block__input
+        &__input {
+            @include amaxvalue("font-size", 16, 12, $phone);
+            font-weight: 700;
+            line-height: math.div(19, 16);
+            opacity: 0.5;
+            padding: 8px 11px;
+            border-bottom: 1px solid #fff;
+            color: #fff;
+            transition: opacity 0.3s;
+            &:not(:placeholder-shown) {
+                opacity: 1;
+            }
+            &:-webkit-autofill,
+            &:-webkit-autofill::first-line,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:active,
+            &:-webkit-autofill:focus {
+                // -webkit-box-shadow: 0 0 0 50px transparent inset;
+                font-weight: 700 !important;
+                // font-family:'Courier New', Courier, monospace !important;
+                transition: background-color 600000s 0s, color 600000s 0s;
+            }
+            &:focus {
+                opacity: 1;
+            }
+            &::placeholder {
+                text-transform: uppercase;
+                color: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+            &[aria-invalid="true"] {
+                border-color: #f55;
+                opacity: 1;
+            }
+            @media (max-width: $smallPhone + px) {
+                padding: 5px 9px;
+            }
+        }
+        // .start-block__start-button
+        &__start-button {
+            @include abetweenvalue("padding-top", 24, 19, $phone, 10);
+            @include abetweenvalue("padding-bottom", 24, 19, $phone, 10);
+            @include abetweenvalue("padding-left", 70, 57, $phone, 45);
+            @include abetweenvalue("padding-right", 70, 57, $phone, 45);
+            @media (max-width: $smallPhone + px) {
+                margin-top: 0;
             }
         }
     }
