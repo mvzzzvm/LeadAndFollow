@@ -209,6 +209,7 @@ address {
     color: $darkBlue;
     font-weight: 700;
     @include aminvalue("font-size", 16, 12, $phone);
+    line-height: 1;
     position: relative;
     display: flex;
     align-items: center;
