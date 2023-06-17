@@ -115,6 +115,7 @@ function teachersSlider(selector) {
                     spaceBetween: 130,
                 },
                 480: {
+                    spaceBetween: 200,
                     pagination: {
                         dynamicBullets: false,
                     },
