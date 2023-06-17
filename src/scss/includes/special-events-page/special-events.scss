@@ -31,8 +31,10 @@
         flex-wrap: wrap;
         gap: 15px 25px;
         @media (max-width: $phone + px) {
-            max-width: pc(693, $phone);
+            max-width: none;
             gap: 30px;
+            padding-left: 39 - 15px;
+            padding-right: 39 - 15px;
         }
         @media (max-width: $smallPhone + px) {
             gap: 20px;
@@ -51,10 +53,10 @@
         flex: 0 0 calc(50% - 13px);
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
-        border-radius: 20px;
-        border: 1px solid #e1e1e1;
         display: flex;
         flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
         @media (max-width: $phone + px) {
             flex: 0 0 calc(50% - 15px);
         }
@@ -88,7 +90,7 @@
             .special-event__title {
                 font-size: 26px;
                 line-height: math.div(30, 26);
-                margin-bottom: 5px;
+                margin-bottom: 10px;
                 @media (max-width: $smallPhone + px) {
                     font-size: 18px;
                 }
@@ -126,16 +128,12 @@
             padding-top: pc(274, 498);
             position: relative;
             img {
-                border-radius: 20px 20px 0 0;
                 position: absolute;
                 left: 0;
                 top: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                @media (max-width: $smallPhone + px) {
-                    border-radius: 10px 10px 0 0;
-                }
             }
         }
         // .special-event__body
@@ -144,11 +142,16 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            border-width: 0 1px 1px;
+            border-color: #e1e1e1;
+            border-style: solid;
+            border-radius: 0 0 20px 20px;
             @media (max-width: $phone + px) {
                 padding: 11px 22px 15px 10px;
             }
             @media (max-width: $smallPhone + px) {
                 padding: 7px 10px 10px 10px;
+                border-radius: 0 0 10px 10px;
             }
         }
         // .special-event__date
@@ -165,11 +168,15 @@
         &__title {
             font-weight: 700;
             margin-bottom: 10px;
+            line-height: 1.3;
             @media (max-width: $smallPhone + px) {
                 font-size: 10px;
             }
         }
         // .special-event__location
+        &__location {
+            margin-top: auto;
+        }
         &__location,
         &__time {
             font-size: 12px;
