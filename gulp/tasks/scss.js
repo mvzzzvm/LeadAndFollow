@@ -63,16 +63,16 @@ export const scss = () => {
                })
             )
          )
-         .pipe(
-            app.plugins.if(
-               app.isBuild,
-               autoPrefixer({
-                  grid: true,
-                  overrideBrowerslist: ['last 3 versions'],
-                  cascade: true,
-               })
-            )
-         )
+        //  .pipe(
+        //     app.plugins.if(
+        //        app.isBuild,
+        //        autoPrefixer({
+        //           grid: true,
+        //           overrideBrowerslist: ['last 3 versions'],
+        //           cascade: true,
+        //        })
+        //     )
+        //  )
          .pipe(sourceMaps.write('.'))
          .pipe(app.gulp.dest(app.path.build.css))
          .pipe(filter('**/*.css'))
