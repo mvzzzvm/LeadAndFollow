@@ -63,11 +63,11 @@
         &::before {
             content: "";
             position: absolute;
-            top: -14%;
-            left: 50%;
-            width: 100%;
+            top: -10%;
+            left: -3px;
+            right: 0;
             height: 80px;
-            transform: translate(-50%, 0) rotate(3deg);
+            transform: rotate(3deg);
             z-index: 1;
             pointer-events: none;
             background: center top / cover no-repeat url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" height="77" viewBox="0 0 768 77" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10.4291 0.455887L-10.8723 18.0528C175.703 27.9013 332.126 70.8499 538.384 76.6918C603.691 78.1514 641.511 74.4166 768.988 60.2964L769.014 59.2794L766.241 59.518C632.337 71.071 593.844 74.0488 527.724 71.0577C461.827 67.7021 401.61 60.6657 343.983 52.1835C280.578 42.8466 220.463 31.7731 159.624 21.9457C104.51 13.0026 48.7835 5.12333 -10.4291 0.455887Z" fill="url(%23paint0_linear_0_2734)"/><defs><linearGradient id="paint0_linear_0_2734" x1="801.743" y1="51.7007" x2="734.164" y2="-185.976" gradientUnits="userSpaceOnUse"><stop stop-color="%23009EE2"/><stop offset="1" stop-color="%23273992"/></linearGradient></defs></svg>');
