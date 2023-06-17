@@ -384,7 +384,7 @@ address {
     @include flex-center;
     column-gap: 26px;
     margin: 40px auto;
-    height: 30px;
+    // height: 30px;
     position: relative;
     z-index: 4;
     // max-width: 170px;
@@ -401,29 +401,21 @@ address {
     }
     &-bullet {
         transition: all 0.5s;
-        @include size(20);
-        flex: 0 0 20px;
+        @include size(18);
+        flex-shrink: 0;
         border-radius: 50%;
         background-color: #e1e1e1;
         cursor: pointer;
-        border: 4px solid #e1e1e1;
+        outline: 4px solid transparent;
         @media (max-width: $smallPhone + px) {
             position: relative;
             text-align: center;
             display: inline-block;
             margin: auto 13px;
-            @include size(30);
-            transform: scale(math.div(20, 30));
+            padding: 10px 0 0 0;
         }
         &-active {
-            @include size(24);
-            flex: 0 0 24px;
-            border-width: 4px;
-            border-color: $lightBlue;
-            @media (max-width: $smallPhone + px) {
-                @include size(30);
-                transform: none;
-            }
+            outline-color: $lightBlue;
         }
     }
 }
@@ -650,6 +642,7 @@ address {
     @include abetweenvalue("font-size", 180, 120, $phone, 60);
     text-align: center;
     color: $darkBlue;
+    margin-bottom: 30px;
 }
 %blurry-dot {
     position: absolute;
