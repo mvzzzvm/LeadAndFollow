@@ -152,6 +152,7 @@
         width: 100%;
         max-width: 1026px;
         margin-top: 42px;
+        overflow: hidden;
         // transform: translateX(20%);
         // outline: 1px solid;
         @media (max-width: 1320 + px) {
@@ -186,6 +187,7 @@
                 left: 0;
                 background-color: #fff;
                 opacity: 0.8;
+                transition: opacity .3s;
                 z-index: 1;
             }
             @media (max-width: $phone + px) {

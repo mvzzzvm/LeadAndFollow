@@ -194,7 +194,7 @@ function singlePageSlider() {
         observer: true,
         observeParents: true,
         // allowTouchMove: true,
-        // loopedSlides: 6,
+        loopedSlides: 6,
         loop: true,
     }
     const commonMainOptions = {
