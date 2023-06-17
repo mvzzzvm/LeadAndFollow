@@ -36,11 +36,23 @@
             width: 96%;
         }
         .swiper-wrapper {
+            position: relative;
+            z-index: 3;
         }
         .swiper-slide {
+            @media (min-width: 768.02px) {
+                opacity: 0.3;
+                transition: opacity .3s, filter .3s;
+                filter: blur(5px);
+                &-active {
+                    opacity: 1;
+                    filter: none;
+                }
+            }
         }
         .swiper-button-prev,
         .swiper-button-next {
+            z-index: -1;
             transform: translate(0, calc(-50% - 54px));
             @media (max-width: $smallPhone + px) {
                 display: none;
@@ -79,7 +91,7 @@
 
 .award {
     color: #000;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 0 36px 60px;

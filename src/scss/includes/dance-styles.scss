@@ -1,9 +1,6 @@
 .dance-styles {
-    margin-top: 200px;
+    margin-top: 100px;
     overflow-x: clip;
-    @media (max-width: $phone + px) {
-        margin-top: 100px;
-    }
     // .dance-styles__container
     &__container {
         position: relative;
@@ -23,7 +20,7 @@
     &__list {
         display: grid;
         grid-template: auto / repeat(3, 1fr);
-        @include aminvalue("margin-top", -100, 0, $phone);
+        @include aminvalue("margin-top", -20, 0, $phone);
         overflow-x: clip;
         @media (max-width: $phone - 1+ px) {
             grid-template-columns: repeat(2, 1fr);

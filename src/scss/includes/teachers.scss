@@ -4,6 +4,7 @@
     // .teachers__container
     &__container {
         overflow: hidden;
+        max-width: 100%;
         @media (max-width: $phone + 100 + px) {
             // position: relative;
         }
@@ -15,7 +16,7 @@
     // .teachers__slider
     &__slider {
         margin: 0 auto;
-        width: pc(630, $maxWidthContainer);
+        width: 630px;
         // overflow: hidden;
         position: relative;
         // outline: 5px solid rgba(purple, 0.3);
@@ -29,6 +30,8 @@
             // width: 78%;
         }
         .swiper-wrapper {
+            position: relative;
+            z-index: 3;
             // outline: 5px solid yellowgreen;
         }
         .swiper-slide {
@@ -44,7 +47,6 @@
         }
         .swiper-button-next,
         .swiper-button-prev {
-            z-index: -1;
             @media (max-width: 700 + px) {
                 top: math.div(160, 2) + px;
             }
@@ -57,17 +59,11 @@
         .swiper-button-next {
         }
     }
-    .swiper-pagination {
-        &-bullet {
-            &-active {
-            }
-        }
-    }
 }
 .teacher {
     display: flex;
     column-gap: 13px;
-    background-color: #fff;
+    background-color: rgba(#fff, .8);
     @media (max-width: $phone + px) {
         column-gap: 10px;
     }
@@ -104,7 +100,10 @@
         padding: 33px 20px 27px 41px;
         border-radius: 20px;
         color: #000;
-        border: 1px solid #e1e1e1;
+        background-color: #fff;
+        // border: 1px solid #e1e1e1;
+        position: relative;
+        box-shadow: 0px 0px 2px #e1e1e1;
         @media (max-width: $phone + 50 + px) {
             padding: 24px 15px 20px 30px;
             height: 100%;
@@ -124,7 +123,7 @@
             font-weight: 400;
             font-size: 90%;
             display: inline-block;
-            padding-top: 0.5em;
+            // padding-top: 0.5em; // what is is for?
         }
         @media (max-width: 700 + px) {
             align-self: center;
