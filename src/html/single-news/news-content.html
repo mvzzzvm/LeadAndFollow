@@ -11,52 +11,11 @@
                 quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
                 aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
                 nesciunt. </p>
-            <div class="_single-page__slider">
-                <div class="_single-page__main-slider-wrapper">
-                    <div class="_single-page__main-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/01.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/02.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/03.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/04.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/05.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-                <div class="_single-page__thumbs-slider-wrapper">
-                    <div class="news-content__thumbs-slider _single-page__thumbs-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/thumbs/01.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/thumbs/02.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/thumbs/03.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/thumbs/04.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/single-news/news-content/slider/thumbs/05.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @@include('..\\fragments\\single-page-slider.html', {
+                mainPath: '@img/single-news/news-content/slider/',
+                thumbsPath: '@img/single-news/news-content/slider/thumbs/',
+                filenames: ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg']
+            }) 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. </p>

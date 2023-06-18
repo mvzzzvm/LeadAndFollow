@@ -1,28 +1,11 @@
 <section class="special-event">
     <div class="_single-page__container">
         <div class="_single-page__body">
-            <div class="_single-page__slider">
-                <div class="_single-page__main-slider-wrapper">
-                    <div class="_single-page__main-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="@img/special-event-page/special-event/slider/01.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/special-event-page/special-event/slider/02.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/special-event-page/special-event/slider/03.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="@img/special-event-page/special-event/slider/04.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                </div>
-            </div>
+                @@include('..\\fragments\\single-page-slider.html', {
+                    mainPath: '@img/special-event-page/special-event/slider/',
+                    thumbsPath: false,
+                    filenames: ['01.jpg', '02.jpg', '03.jpg', '04.jpg']
+                }) 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
