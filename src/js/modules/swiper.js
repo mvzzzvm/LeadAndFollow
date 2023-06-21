@@ -249,36 +249,38 @@ function singlePageSlider() {
             },
         },
     }
-    const prefix = ".single-page"
-    const mainSlider = document.querySelector(prefix + "-main-slider")
-    const thumbsSlider = document.querySelector(prefix + "-thumbs-slider")
-    let thumbs
-    let main
-    if (thumbsSlider) {
-        thumbs = new Swiper(thumbsSlider, thumbsOptions)
-    }
-    if (mainSlider) {
-        const mainOptions = {
-            ...commonMainOptions,
-            ...{
-                modules: [Navigation],
-                navigation: {
-                    prevEl: prefix + "-main-slider .swiper-button-prev",
-                    nextEl: prefix + "-main-slider .swiper-button-next",
-                },
-            },
-        }
+    const sliders = document.querySelectorAll('.single-page-slider')
+    for(const slider of sliders) {
+        const mainSlider = slider.querySelector(".single-page-main-slider")
+        const thumbsSlider = slider.querySelector(".single-page-thumbs-slider")
+        let thumbs
+        let main
         if (thumbsSlider) {
-            Object.assign(mainOptions, {
-                modules: [Thumbs, Controller, Autoplay, Navigation],
-                thumbs: {
-                    swiper: thumbs,
-                },
-            })
+            thumbs = new Swiper(thumbsSlider, thumbsOptions)
         }
-        main = new Swiper(mainSlider, mainOptions)
-        if (thumbsSlider) {
-            main.controller.control = thumbs
+        if (mainSlider) {
+            const mainOptions = {
+                ...commonMainOptions,
+                ...{
+                    modules: [Navigation],
+                    navigation: {
+                        prevEl: slider.querySelector(".swiper-button-prev"),
+                        nextEl: slider.querySelector(".swiper-button-next"),
+                    },
+                },
+            }
+            if (thumbsSlider) {
+                Object.assign(mainOptions, {
+                    modules: [Thumbs, Controller, Autoplay, Navigation],
+                    thumbs: {
+                        swiper: thumbs,
+                    },
+                })
+            }
+            main = new Swiper(mainSlider, mainOptions)
+            if (thumbsSlider) {
+                main.controller.control = thumbs
+            }
         }
     }
 }
