@@ -249,9 +249,9 @@ function singlePageSlider() {
             },
         },
     }
-    const prefix = "._single-page"
-    const mainSlider = document.querySelector(prefix + "__main-slider")
-    const thumbsSlider = document.querySelector(prefix + "__thumbs-slider")
+    const prefix = ".single-page"
+    const mainSlider = document.querySelector(prefix + "-main-slider")
+    const thumbsSlider = document.querySelector(prefix + "-thumbs-slider")
     let thumbs
     let main
     if (thumbsSlider) {
@@ -263,8 +263,8 @@ function singlePageSlider() {
             ...{
                 modules: [Navigation],
                 navigation: {
-                    prevEl: prefix + "__main-slider .swiper-button-prev",
-                    nextEl: prefix + "__main-slider .swiper-button-next",
+                    prevEl: prefix + "-main-slider .swiper-button-prev",
+                    nextEl: prefix + "-main-slider .swiper-button-next",
                 },
             },
         }
