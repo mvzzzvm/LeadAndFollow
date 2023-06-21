@@ -20,21 +20,27 @@
     ._single-page__main-slider-wrapper {
         overflow: hidden;
         width: 100%;
-        max-width: 1026 + 300px;
-        margin: 0 auto;
-        padding: 0 150px;
         position: relative;
-        // outline: 1px solid red;
-        @media (max-width: 1320 + px) {
-            padding: 0;
-        }
+        @include flex-center;
+
         @media (max-width: $smallPhone + px) {
-            position: relative;
+            // position: relative;
+        }
+        .swiper-button-prev-wrapper {
+            // justify-content: flex-start;
+        }
+        .swiper-button-next-wrapper {
+            // justify-content: flex-end;
         }
         .swiper-button-prev,
         .swiper-button-next {
-            // transform: none;
-            @media (max-width: $phone + px) {
+            position: relative;
+            left: auto;
+            right:auto;
+            bottom: auto;
+            top: auto;
+            transform: none;
+            @media (max-width: 992px) {
                 @include size(40);
                 &::before {
                     font-size: 14px;
@@ -47,32 +53,33 @@
                 }
             }
         }
-        .swiper-button-prev {
-            left: 0;
-            // left: pc(-30, $phone - 10);
-            // transform: translate(-100%, -50%);
-            @media (max-width: $smallPhone + px) {
-                left: 0;
-                transform: translate(0, -50%);
-            }
+    }
+    .swiper-button-prev-wrapper, .swiper-button-next-wrapper {
+        flex: 0 0 75 + 60 * 2px - 15px;
+        flex: 0 0 pc(75 + 60 * 2 - 15, 1428);
+        @include flex-center;
+        @media (max-width: 768px) {
+            flex: 0 0 pc(math.div(768 - 30 - 569, 2), 768 - 30)
         }
-        .swiper-button-next {
-            right: 0;
-            // transform: translate(100%, -50%);
-            // right: pc(-30, $phone - 10);
-            @media (max-width: $smallPhone + px) {
-                right: 0;
-                transform: translate(0, -50%);
-            }
+        @media (max-width: 480px) {
+            display: none;
         }
     }
     ._single-page__main-slider {
         position: relative;
         width: 100%;
         max-width: 1026px;
-        @media (max-width: 1320 + px) {
-            width: pc(545, $phone);
-            margin: 0 auto;
+        overflow: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        @media (max-width: 1260px) {
+            max-width: pc(1026, 1260);
+        }
+        @media (max-width: 992px) {
+            max-width: 85%;
+        }
+        @media (max-width: 700px) {
+            max-width: none;
         }
         @media (max-width: $smallPhone + px) {
             position: static;
@@ -96,13 +103,11 @@
     }
     ._single-page__thumbs-slider-wrapper {
         width: 100%;
-        max-width: 1026 + 300px;
-        margin: 0 auto;
-        padding: 0 150px;
-        // outline: 1px solid red;
-        @media (max-width: 1320 + px) {
-            padding: 0;
-        }
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        margin-top: 3%;
+        @include flex-center;
         @media (max-width: $smallPhone + px) {
             position: relative;
         }
@@ -110,20 +115,15 @@
     ._single-page__thumbs-slider {
         width: 100%;
         max-width: 1026px;
-        margin-top: 42px;
         overflow: hidden;
-        // transform: translateX(20%);
-        // outline: 1px solid;
-        @media (max-width: 1320 + px) {
-            margin: 12px auto 0;
-            width: pc(545, $phone);
+        border-radius: 10px;
+        @media (max-width: 992px) {
+            border-radius: 5px;
         }
         @media (max-width: $phone + px) {
             transform: none;
             overflow: hidden;
             width: 100%;
-        }
-        @media (max-width: $smallPhone + px) {
         }
         .swiper-slide {
             // width: 186px;
@@ -149,15 +149,13 @@
                 transition: opacity .3s;
                 z-index: 1;
             }
-            @media (max-width: $phone + px) {
-                flex: 0 0 calc((100% - 10px) / 7 - 9px);
-                padding-top: pc(58, $phone - 10);
+            @media (max-width: 992px) {
+                flex: 0 0 calc(20% - math.div(12px * 4, 5));
                 border-radius: 5px;
             }
             @media (max-width: $smallPhone + px) {
-                flex: 0 0 22.95%;
                 flex: 0 0 calc(25% - math.div(8px * 3, 4));
-                padding-top: pc(45, $smallPhone - 32);
+                padding-top: 14%;
             }
             img {
                 object-fit: cover;

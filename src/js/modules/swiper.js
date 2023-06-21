@@ -203,10 +203,19 @@ function singlePageSlider() {
             resizeObserver: true,
             updateOnWindowResize: true,
             slidesPerView: 1,
-            spaceBetween: 200,
+            spaceBetween: 30,
             breakpoints: {
+                1440: {
+                    spaceBetween: 200,
+                },
                 1321: {
                     spaceBetween: 150,
+                },
+                992: {
+                    spaceBetween: 120,
+                },
+                768: {
+                    spaceBetween: 45,
                 },
             },
         },
@@ -219,18 +228,22 @@ function singlePageSlider() {
             slidesPerView: 4,
             spaceBetween: 8,
             breakpoints: {
-                769: {
+                993 : {
                     spaceBetween: 24,
+                    slidesPerView: 5
+                },
+                769: {
+                    spaceBetween: 12,
                     slidesPerView: 5,
                 },
                 481: {
                     spaceBetween: 12,
-                    slidesPerView: 7,
+                    slidesPerView: 5,
                     centeredSlides: true,
                 },
                 320: {
-                    // slidesPerView: 4,
-                    // spaceBetween: 8,
+                    slidesPerView: 4,
+                    spaceBetween: 8,
                     centeredSlides: false,
                 },
             },
