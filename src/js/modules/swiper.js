@@ -196,6 +196,7 @@ function singlePageSlider() {
         // allowTouchMove: true,
         loopedSlides: 6,
         loop: true,
+        centeredSlides: true,
     }
     const commonMainOptions = {
         ...commonOptions,
@@ -244,7 +245,7 @@ function singlePageSlider() {
                 320: {
                     slidesPerView: 4,
                     spaceBetween: 8,
-                    centeredSlides: false,
+                    // centeredSlides: false,
                 },
             },
         },
