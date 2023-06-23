@@ -82,12 +82,10 @@ export function slideToggle(el, duration = DEFAULT_DURATION) {
       slideUp(el, duration)
    }
 }
-
-function rgba2rgb(background, color) {
-    const alpha = color[3]
-
-  return [Math.floor((1 - alpha) * background[0] + alpha * color[0] + 0.5),
-        Math.floor((1 - alpha) * background[1] + alpha * color[1] + 0.5),
-        Math.floor((1 - alpha) * background[2] + alpha * color[2] + 0.5)]
-}
-// console.log(rgba2rgb([255, 255, 255], [78, 156, 219, .066])) // [ 255, 128, 128 ]
+export function debounce(func, timeout = 200) {
+    let timer
+    return (...args) => {
+        clearTimeout(timer)
+        timer = setTimeout(() => func.apply(this, args), timeout)
+    }
+ }
