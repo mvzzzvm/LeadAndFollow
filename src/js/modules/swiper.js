@@ -1,5 +1,6 @@
 import Swiper, { Navigation, Pagination, Controller, Thumbs, Autoplay } from "swiper"
 // import "swiper/css"
+import {debounce} from './functions.js'
 
 function buildSliders(enableZoom = false) {
     document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)').forEach((slider) => {
@@ -257,7 +258,30 @@ function singlePageSlider() {
         let thumbs
         let main
         if (thumbsSlider) {
+            const slides = thumbsSlider.querySelectorAll('.swiper-slide')
+            // console.log(slides.length, slidesPerView, breakpoint)
+            updateOptions(slides)
+            // console.log('thumbsOptions', thumbsOptions)
             thumbs = new Swiper(thumbsSlider, thumbsOptions)
+            window.addEventListener('resize', debounce(() => updateOptions(slides)))
+        }
+        function updateOptions(slides){
+            const slidesPerView = determineSlidesPerView(thumbsOptions)
+            const breakpointWidth = findBreakpointWidth(thumbsOptions)
+            if(slides.length <= slidesPerView) {
+                thumbsOptions.loop = false
+                thumbsOptions.centeredSlides = false
+                // console.log('thumbsOptions.breakpoints[breakpoint]', thumbsOptions.breakpoints[breakpoint])
+                if(thumbsOptions.breakpoints[breakpointWidth]) {
+                    thumbsOptions.breakpoints[breakpointWidth].loop = false
+                    thumbsOptions.breakpoints[breakpointWidth].centeredSlides = false
+                }
+                if(thumbs) {
+                    thumbs.params.loop = false
+                    thumbs.params.centeredSlides = false
+                }
+                // console.log('updated options and params', thumbs?.params, thumbs)
+            }
         }
         if (mainSlider) {
             const mainOptions = {
@@ -286,3 +310,41 @@ function singlePageSlider() {
     }
 }
 initSliders()
+function determineSlidesPerView(options){
+    let slidesPerView
+    // find the applicable breakpoint
+    const breakpoint = findBreakpoint(options, window.innerWidth)
+    if(breakpoint) {
+        slidesPerView = breakpoint.slidesPerView
+    } 
+    // if there is no breakpoint or breakpoint.slidesPerView
+    // is not set then use options.slidePerView
+    // if it is not set then use 1
+    if(!slidesPerView) slidesPerView = options.slidesPerView || 1
+    return slidesPerView
+}
+// find the breakpoint objectthat is active at a particular window width
+function findBreakpoint(options, windowWidth = window.innerWidth){
+    let currentBreakpoint
+    if(options.breakpoints) {
+        for(const breakpoint of Object.keys(options.breakpoints)) {
+            // console.log('breakpoint', breakpoint, options.breakpoints[breakpoint])
+            if(breakpoint > windowWidth) break
+            currentBreakpoint = options.breakpoints[breakpoint]
+        }
+    }
+    return currentBreakpoint
+}
+// find the breakpoint width that is active at a particular 
+// window width
+function findBreakpointWidth(options, windowWidth = window.innerWidth){
+    let currentBreakpoint
+    if(options.breakpoints) {
+        for(const breakpoint of Object.keys(options.breakpoints)) {
+            // console.log('breakpoint', breakpoint, options.breakpoints[breakpoint])
+            if(breakpoint > windowWidth) break
+            currentBreakpoint = breakpoint
+        }
+    }
+    return currentBreakpoint
+}
