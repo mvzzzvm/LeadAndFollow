@@ -144,9 +144,12 @@
             img {
                 @include ai;
             }
-            &-thumb-active {
-            }
             &-active {
+                &::before {
+                    opacity: .3;
+                }
+            }
+            &-thumb-active {
                 &::before {
                     opacity: 0;
                 }
