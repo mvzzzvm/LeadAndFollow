@@ -1,4 +1,4 @@
-export function servisesResizer() {
+export function servicesResizer() {
     let prevWidth = Number.MAX_SAFE_INTEGER
     const breakpoint = 480
     function resizeServices() {

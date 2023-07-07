@@ -8,8 +8,8 @@ import { DynamicAdapt } from "./modules/dynamic-adapt.js"
 const da = new DynamicAdapt("max")
 da.init()
 
-import { servisesResizer } from "./modules/resizer.js"
-servisesResizer()
+import { servicesResizer } from "./modules/resizer.js"
+servicesResizer()
 
 // import { initSpoilers } from "./modules/spoiler.js"
 // document.addEventListener("DOMContentLoaded", initSpoilers)
