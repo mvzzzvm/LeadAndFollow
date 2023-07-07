@@ -110,7 +110,8 @@
             transform: translate(0, -50%);
             right: 0;
             z-index: 3;
-            @include size(185, 556);
+            @include size(185, 554);
+            border-radius: 5px;
             @media (max-width: $maxWidthContainer + 30 + px) {
                 right: 30px;
             }
@@ -153,6 +154,7 @@
                 border-radius: 5px;
                 overflow: hidden;
                 margin-bottom: 18px;
+                transition: opacity .3s;
                 @media (any-hover:hover) {
                     &:hover {
                         img {
