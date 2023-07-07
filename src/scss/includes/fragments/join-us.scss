@@ -100,9 +100,6 @@
             @include abetweenvalue("padding-bottom", 24, 19, $phone, 10);
             @include abetweenvalue("padding-left", 70, 57, $phone, 45);
             @include abetweenvalue("padding-right", 70, 57, $phone, 45);
-            @media (max-width: $smallPhone + px) {
-                margin-top: 0;
-            }
         }
     }
 }
