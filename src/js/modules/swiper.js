@@ -1,5 +1,6 @@
-import Swiper, { Navigation, Pagination, Controller, Thumbs, Autoplay } from "swiper"
+import Swiper, { Navigation, Pagination, Thumbs, Autoplay, EffectFade } from "swiper"
 // import "swiper/css"
+// import 'swiper/css/effect-fade'
 import {debounce} from './functions.js'
 
 function buildSliders(enableZoom = false) {
@@ -21,7 +22,6 @@ function indexSlider() {
     const thumbsSlider = document.querySelector(".first-screen__thumbs-slider")
     if (mainSlider && thumbsSlider) {
         const thumbsOptions = {
-            modules: [Controller],
             allowTouchMove: true,
             slidesPerView: 4,
             slidesPerGroup: 1,
@@ -50,11 +50,16 @@ function indexSlider() {
         }
         let thumbs = new Swiper(thumbsSlider, thumbsOptions)
         const mainOptions = {
-            modules: [Thumbs, Controller, Autoplay],
+            modules: [Thumbs, Autoplay, EffectFade],
             // allowTouchMove: true,
             autoplay: {
                 disableOnInteraction: false,
                 delay: 5000
+            },
+            speed: 1000,
+            effect: 'fade',
+            fadeEffect: {
+              crossFade: true
             },
             observer: true,
             observeParents: true,
@@ -68,8 +73,6 @@ function indexSlider() {
             },
         }
         let main = new Swiper(mainSlider, mainOptions)
-        main.controller.control = thumbs
-        //   thumbs.controller.control = main
 
         let prevWidth = window.innerWidth
         function reinit() {
@@ -78,7 +81,7 @@ function indexSlider() {
             // thumbs.destroy()
             thumbs = new Swiper(thumbsSlider, thumbsOptions)
             main = new Swiper(mainSlider, mainOptions)
-            main.controller.control = thumbs
+            // main.controller.control = thumbs
         }
         window.addEventListener("resize", (e) => {
             if (window.innerWidth <= 600 && prevWidth > 600) {
