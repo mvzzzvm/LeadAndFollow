@@ -4,7 +4,7 @@ import webpfy from 'webpfy'
 export const testWebpfy = (args) => {
    // console.log("args", args)
    return app.gulp
-      .src(`./src/test/webpfy/test.html`)
+      .src(`./src/index.html`)
       .pipe(
          app.plugins.plumber(
             app.plugins.notify.onError({
