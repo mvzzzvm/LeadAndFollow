@@ -1,14 +1,12 @@
 .offers {
-    padding-top: 250px;
-    margin-top: -200px;
+    padding-top: 50px;
     margin-bottom: 20px;
+    position: relative;
     &::before {
         @extend %fabric;
-        transform: translate(-50%, 10%);
+        top: 1%;
+        transform: translate(-50%, 0%);
         opacity: 0.5;
-        @media (max-width: $phone + px) {
-            transform: translate(-50%, -5%);
-        }
     }
     // .offers__container
     &__container {
