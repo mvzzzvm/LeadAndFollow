@@ -1,26 +1,27 @@
 .swal2 {
     &-popup {
-    color: #000 !important;
-    border-radius: 20px !important;
+        color: #000;
+        border-radius: 20px;
+        padding-bottom: 30px;
     }
     &-title {
-
+        font-size: 36px;
+        margin-bottom: 0;
     }
-        &-confirm {
-        //  background-color: $darkBlue !important;   
-        //  @extend %button;
-        //  border-radius: 60px !important;
-        width: 200px !important;
+    &-actions {
+        margin-top: 2em;
+    }
+    &-confirm {
+        width: 200px;
         height: 60px;
         font-size: 20px;
         @include flex-center;
         padding: 0;
-
-        }
+    }
     &-icon.swal2-success .swal2-success-ring {
-        border-color: rgba($lightBlue, .5) !important;
+        border-color: #a4c9e9;
     }
     &-icon.swal2-success [class^=swal2-success-line]{
-        background-color: rgba($lightBlue, .5) !important;
+        background-color: #a4c9e9;
     }
 }

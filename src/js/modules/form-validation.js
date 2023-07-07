@@ -56,7 +56,7 @@ export function validateWholeForm(formSelector) {
                 buttonsStyling: false,
             })
             alert.fire(
-                `Thank you for signing up, ${e.target.name.value}!`,
+                `Thank you for signing&nbsp;up, ${e.target.name.value}!`,
                 "We will contact you shortly!",
                 "success"
             )
