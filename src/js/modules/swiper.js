@@ -73,7 +73,7 @@ function indexSlider() {
 
         let prevWidth = window.innerWidth
         function reinit() {
-            console.log("reinit! ", prevWidth, window.innerWidth)
+            // console.log("reinit! ", prevWidth, window.innerWidth)
             // main.destroy()
             // thumbs.destroy()
             thumbs = new Swiper(thumbsSlider, thumbsOptions)
@@ -197,7 +197,6 @@ function singlePageSlider() {
         // allowTouchMove: true,
         loopedSlides: 6,
         loop: true,
-        centeredSlides: true,
     }
     const commonMainOptions = {
         ...commonOptions,
@@ -225,7 +224,6 @@ function singlePageSlider() {
     const thumbsOptions = {
         ...commonOptions,
         ...{
-            modules: [Controller],
             slidesPerGroup: 1,
             slidesPerView: 4,
             spaceBetween: 8,
@@ -241,12 +239,10 @@ function singlePageSlider() {
                 481: {
                     spaceBetween: 12,
                     slidesPerView: 5,
-                    centeredSlides: true,
                 },
                 320: {
                     slidesPerView: 4,
                     spaceBetween: 8,
-                    // centeredSlides: false,
                 },
             },
         },
@@ -257,33 +253,16 @@ function singlePageSlider() {
         const thumbsSlider = slider.querySelector(".single-page-thumbs-slider")
         let thumbs
         let main
-        if (thumbsSlider) {
+        function initThumbsSlider(){
+            if(thumbs) thumbs.destroy(true, true)
             const slides = thumbsSlider.querySelectorAll('.swiper-slide')
-            // console.log(slides.length, slidesPerView, breakpoint)
             updateOptions(slides)
             // console.log('thumbsOptions', thumbsOptions)
             thumbs = new Swiper(thumbsSlider, thumbsOptions)
-            window.addEventListener('resize', debounce(() => updateOptions(slides)))
+            // console.log('initialized thumbs', thumbs)
         }
-        function updateOptions(slides){
-            const slidesPerView = determineSlidesPerView(thumbsOptions)
-            const breakpointWidth = findBreakpointWidth(thumbsOptions)
-            if(slides.length <= slidesPerView) {
-                thumbsOptions.loop = false
-                thumbsOptions.centeredSlides = false
-                // console.log('thumbsOptions.breakpoints[breakpoint]', thumbsOptions.breakpoints[breakpoint])
-                if(thumbsOptions.breakpoints[breakpointWidth]) {
-                    thumbsOptions.breakpoints[breakpointWidth].loop = false
-                    thumbsOptions.breakpoints[breakpointWidth].centeredSlides = false
-                }
-                if(thumbs) {
-                    thumbs.params.loop = false
-                    thumbs.params.centeredSlides = false
-                }
-                // console.log('updated options and params', thumbs?.params, thumbs)
-            }
-        }
-        if (mainSlider) {
+        function initMainSlider(){
+            if(main) main.destroy(true, true)
             const mainOptions = {
                 ...commonMainOptions,
                 ...{
@@ -296,7 +275,7 @@ function singlePageSlider() {
             }
             if (thumbsSlider) {
                 Object.assign(mainOptions, {
-                    modules: [Thumbs, Controller, Autoplay, Navigation],
+                    modules: [Thumbs, Navigation],
                     thumbs: {
                         swiper: thumbs,
                     },
@@ -304,9 +283,51 @@ function singlePageSlider() {
             }
             main = new Swiper(mainSlider, mainOptions)
             if (thumbsSlider) {
-                main.controller.control = thumbs
+                // main.controller.control = thumbs
+            }
+            // console.log('initialized main', main)
+        }
+        function initSlider(){
+            if (thumbsSlider) {
+                initThumbsSlider()
+            }
+            if (mainSlider) {
+                initMainSlider()
             }
         }
+        function updateOptions(slides){
+            const slidesPerView = determineSlidesPerView(thumbsOptions)
+            const breakpointWidth = findBreakpointWidth(thumbsOptions)
+            if(slides.length <= slidesPerView) {
+                thumbsOptions.loop = false
+                // console.log('thumbsOptions.breakpoints[breakpoint]', thumbsOptions.breakpoints[breakpoint])
+                if(thumbsOptions.breakpoints[breakpointWidth]) {
+                    thumbsOptions.breakpoints[breakpointWidth].loop = false
+                }
+                if(thumbs && thumbs.destroyed !== true) {
+                    // console.log('thumbs', thumbs)
+                    thumbs.params.loop = false
+                    thumbs.params.breakpoints[breakpointWidth].loop = false
+                }
+                // console.log('updated options and params', thumbs?.params, thumbs)
+            } else {
+                // reset settings!
+                thumbsOptions.loop = true
+                thumbsOptions.centeredSlides = false
+                // console.log('thumbsOptions.breakpoints[breakpoint]', thumbsOptions.breakpoints[breakpoint])
+                if(thumbsOptions.breakpoints[breakpointWidth]) {
+                    thumbsOptions.breakpoints[breakpointWidth].loop = true
+                }
+                if(thumbs && thumbs.destroyed !== true) {
+                    // console.log('thumbs', thumbs)
+                    thumbs.params.loop = true
+                    thumbs.params.breakpoints[breakpointWidth].loop = true
+                }
+            }
+        }
+        initSlider()
+        window.addEventListener('resize', debounce(initSlider))
+
     }
 }
 initSliders()
