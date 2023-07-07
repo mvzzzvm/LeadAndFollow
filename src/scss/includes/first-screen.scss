@@ -19,13 +19,10 @@
         &__start-block {
             position: absolute;
             top: pc(147, 636);
-            left: -75px;
+            left: 30px;
             background-color: #fff;
             &::before {
                 transform: translate(-50%, -50%) rotate(20.83deg);
-            }
-            @media (max-width: 1440 + px) {
-                left: 30px;
             }
             @media (max-width: 600 + px) {
                 top: 21px;
@@ -154,11 +151,10 @@
                 border-radius: 5px;
                 overflow: hidden;
                 margin-bottom: 18px;
-                transition: opacity .3s;
                 @media (any-hover:hover) {
-                    &:hover {
+                    &:not(.swiper-slide-thumb-active):hover {
                         img {
-                            opacity: .75;
+                            opacity: .7;
                         }
                     }
                 }
