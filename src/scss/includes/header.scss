@@ -32,7 +32,7 @@
     &__logo {
         margin-top: 15px;
         margin-bottom: -7px;
-        @include avalue("width", 328, 132);
+        @include avalue("width", 329, 132);
         // @include avalue("height", 80, 32);
         z-index: 1;
         position: relative;

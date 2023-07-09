@@ -23,6 +23,7 @@
     }
     // .start__container
     &__container {
+        max-width: none;
         @media (max-width: $phone + px) {
             overflow-x: clip;
         }
