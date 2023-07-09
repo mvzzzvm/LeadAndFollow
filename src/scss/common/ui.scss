@@ -296,19 +296,20 @@ address {
     .swiper-button-next {
         @include size(75);
         border-radius: 50%;
-        color: $lightBlue;
-        border: 1px solid;
+        outline: 1px solid transparent;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="37.5" cy="37.5" r="37" stroke="url(%23paint0_linear_0_232)"/><defs><linearGradient id="paint0_linear_0_232" x1="-3.125" y1="37" x2="71.7176" y2="17.8122" gradientUnits="userSpaceOnUse"><stop stop-color="%23009EE2"/><stop offset="1" stop-color="%23273992"/></linearGradient></defs></svg>');
         position: absolute;
         top: 50%;
         cursor: pointer;
         transform: translate(0, -50%);
+        transition: all 0.3s;
         &::before {
-            transition: all 0.3s;
-            content: "\e900";
-            @extend %ic;
+            content: "";
             @include abs-center;
-            font-size: 34px;
-            text-align: center;
+            width: pc(34, 75);
+            height: pc(27, 75);
+            transition: transform 0.3s;
+            background: no-repeat url('data:image/svg+xml;utf8,<svg viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9599 1.20321L2.41825 12.7434L33.2916 12.7434C33.6828 12.7434 34 13.0605 34 13.4517C34 13.8429 33.6828 14.1601 33.2916 14.1601L2.41825 14.1601L13.9599 25.7002C14.2317 25.9816 14.2238 26.43 13.9425 26.7018C13.6679 26.9669 13.2328 26.9669 12.9583 26.7018L0.208317 13.9518C-0.068664 13.6756 -0.0691942 13.2271 0.207055 12.9501C0.207455 12.9497 0.207917 12.9492 0.208317 12.9488L12.9583 0.198812C13.2397 -0.0729894 13.6881 -0.0651521 13.9599 0.216212C14.2251 0.490735 14.2251 0.925895 13.9599 1.20042L13.9599 1.20321Z" fill="url(%23paint0_linear_0_231)"/><defs><linearGradient id="paint0_linear_0_231" x1="17.2268" y1="28.0215" x2="22.8005" y2="0.543454" gradientUnits="userSpaceOnUse"><stop stop-color="%23009EE2"/><stop offset="1" stop-color="%23273992"/></linearGradient></defs></svg>');
         }
         @media (max-width: $phone + px) {
             @include size(65);
@@ -327,7 +328,7 @@ address {
         }
         @media (any-hover: hover) {
             &:hover {
-                // color: $darkBlue;
+                outline-color: rgba($lightBlue, .4);
             }
         }
     }
@@ -337,29 +338,15 @@ address {
             left: 0;
             transform: translate(-120%, 0%);
         }
-        &::before {
-            transform: translate(-50%, -50%) rotate(180deg);
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                &::before {
-                    transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
-                }
-            }
-        }
     }
     .swiper-button-next {
         right: -75 - 23px;
+        &::before {
+            transform: translate(-50%, -50%) scaleX(-1);
+        }
         @media (max-width: 700 + px) {
             right: 0;
             transform: translate(120%, 0%);
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                &::before {
-                    transform: translate(-50%, -50%) scale(1.1);
-                }
-            }
         }
     }
 }
