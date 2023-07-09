@@ -263,12 +263,10 @@ address {
     display: flex;
     column-gap: 7px;
     @extend %ic;
-    // .social-list__link
     &__link {
         font-size: 11px;
         line-height: 1;
         @include size(28);
-        flex: 0 0 28px;
         @include flex-center;
         border: 1px solid;
         border-radius: 50%;

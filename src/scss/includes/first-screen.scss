@@ -61,7 +61,7 @@
             bottom: 0;
             // transform: translate(-50%, 0);
             max-width: 1440px;
-            height: 636px;
+            height: 100%;
             overflow: hidden;
             @media (max-width: $phone + px) {
                 height: 345px;
@@ -105,15 +105,15 @@
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
-            right: 0;
+            right: 30px;
             z-index: 3;
-            @include size(185, 554);
+            // @include size(185, 554);
+            width: 185px;
+            height: pc(554, 636);
             border-radius: 5px;
-            @media (max-width: $maxWidthContainer + 30 + px) {
-                right: 30px;
-            }
             @media (max-width: $phone + px) {
-                @include size(100, 302);
+                // @include size(100, 302);
+                width: 100px;
             }
             @media (max-width: 600 + px) {
                 @include size(100 * 4 + 18 * 3, 68);
@@ -144,7 +144,8 @@
             }
             .swiper-slide {
                 @include size(185, 125);
-                flex: 0 0 125px;
+                // flex: 0 0 125px;
+                flex: auto;
                 background-color: rgba(255, 255, 255, .8);
                 cursor: pointer;
                 position: relative;
@@ -173,11 +174,11 @@
                     // @include size(66, 45);
                     flex: 0 0 calc(25% - 5px);
                     // padding-top: 25%;
-                    margin-right: 7px;
+                    margin-right: 5px;
                     margin-bottom: 0;
                 }
                 img {
-                    opacity: 0.2;
+                    opacity: 0.4    ;
                     transition: opacity 0.3s;
                     @media (max-width: 500 + px) {
                         @include abs;
