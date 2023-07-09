@@ -71,7 +71,7 @@
             transform: translate(-50%, -20%);
             @include avalue("width", 290, 130);
             @include avalue("height", 290, 130);
-            border: 1px solid $lightBlue;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 290 290" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_b_0_79)"><circle cx="145" cy="145" r="145" fill="white" fill-opacity="0.25"/><circle cx="145" cy="145" r="144.5" stroke="url(%23paint0_linear_0_79)"/></g><defs><filter id="filter0_b_0_79" x="-15" y="-15" width="320" height="320" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_0_79"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_0_79" result="shape"/></filter><linearGradient id="paint0_linear_0_79" x1="-12.0833" y1="143.067" x2="277.308" y2="68.874" gradientUnits="userSpaceOnUse"><stop stop-color="%23009EE2"/><stop offset="1" stop-color="%23273992"/></linearGradient></defs></svg>');
             border-radius: 50%;
             z-index: -1;
         }
