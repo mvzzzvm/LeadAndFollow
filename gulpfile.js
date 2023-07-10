@@ -12,6 +12,7 @@ global.app = {
    isWebpfy: process.argv.includes("--webpfy"),
    isImagemin: process.argv.includes("--imagemin"),
    isGzip: process.argv.includes("--gzip"),
+   isBuildFonts: process.argv.includes("--buildFonts"),
 }
 import { copy } from "./gulp/tasks/copy.js"
 import { resetEverything, resetPathChildren } from "./gulp/tasks/reset.js"
@@ -43,7 +44,7 @@ const processHtmlAfterScss = false
 
 const devFonts = copyFonts
 const buildFonts = gulp.series(copyOtf, otf2ttf, copyTtf, ttf2woff, fontsStyle)
-const fonts = app.isBuild ? buildFonts : devFonts
+const fonts = app.isBuildFonts ? buildFonts : devFonts
 const scssAndHtmlInParallel = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, video))
 const scssAfterHtml = gulp.series(fonts, scss, html, gulp.parallel(copy, js, images, video))
 const mainTasks = processHtmlAfterScss ? scssAfterHtml : scssAndHtmlInParallel
