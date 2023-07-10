@@ -83,6 +83,8 @@
         transform: translate(-50%, 0);
         max-height: 100%;
         max-width: 100%;
+        width: auto;
+        height: auto;
         margin-bottom: 21px;
         // outline: 1px solid lightgreen;
         @media (max-width: $smallPhone + px) {
