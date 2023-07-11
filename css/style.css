@@ -864,7 +864,7 @@ address {
   height: 603px;
   z-index: -2;
   transform: translate(-50%, 10%);
-  background: center top no-repeat url(../../img/fabric.jpg);
+  background: center top no-repeat url(../img/fabric.jpg);
 }
 
 ._light-button,
@@ -896,7 +896,7 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: center/contain no-repeat url(../../img/incomplete-circle.png);
+  background: center/contain no-repeat url(../img/incomplete-circle.png);
 }
 
 ._arrow-button-small {
@@ -2297,7 +2297,7 @@ br.responsive {
   height: 100%;
   z-index: -2;
   transform: translate(-50%, -25%) scaleX(-1);
-  background: center top no-repeat url(../../img/fabric.jpg);
+  background: center top no-repeat url(../img/fabric.jpg);
 }
 
 .start__container {
@@ -3105,7 +3105,7 @@ br.responsive {
     opacity: 0.1;
     width: 100%;
     height: 100%;
-    background: no-repeat center center url(../../img/popup-bg.png);
+    background: no-repeat center center url(../img/popup-bg.png);
     background-size: contain;
   }
 
@@ -5604,14 +5604,14 @@ br.responsive {
   }
 }
 
-.webp .special-events::before, .webp .news-content::before, .webp .offers::before, .webp .news::before, .webp .classes ._decor-fabric::after, .webp .classes ._decor-fabric::before, .webp .about-us::before, .webp .services::before, .webp .awards::before { background: center top no-repeat url(../../img/fabric.webp); }
+.webp .special-events::before, .webp .news-content::before, .webp .offers::before, .webp .news::before, .webp .classes ._decor-fabric::after, .webp .classes ._decor-fabric::before, .webp .about-us::before, .webp .services::before, .webp .awards::before { background: center top no-repeat url(../img/fabric.webp); }
 
-.webp ._arrow-button-large::before { background: center/contain no-repeat url(../../img/incomplete-circle.webp); }
+.webp ._arrow-button-large::before { background: center/contain no-repeat url(../img/incomplete-circle.webp); }
 
-.webp .start::before { background: center top no-repeat url(../../img/fabric.webp); }
+.webp .start::before { background: center top no-repeat url(../img/fabric.webp); }
 
 @media (min-width: 768px) {
 
-  .webp .smaller-popup .popup-body::before { background: no-repeat center center url(../../img/popup-bg.webp); }
+  .webp .smaller-popup .popup-body::before { background: no-repeat center center url(../img/popup-bg.webp); }
 }
 /*# sourceMappingURL=style.css.map */
