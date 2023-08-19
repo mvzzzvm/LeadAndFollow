@@ -312,14 +312,6 @@ main {
   font-style: normal;
 }
 
-@font-face {
-  font-family: "icons";
-  src: url("../../fonts/icons.woff?kvqpnf") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 .pagination__button-prev::before,
 .pagination__button-next::before,
 .social-list,
