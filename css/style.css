@@ -941,7 +941,7 @@ address {
 }
 
 .social-list__link {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
   width: 28px;
   height: 28px;
@@ -1097,7 +1097,7 @@ address {
 
 ._inner-page .first-screen__image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   filter: grayscale(100%);
 }
 
@@ -1678,6 +1678,8 @@ br.responsive {
   transform: translate(-50%, 0);
   max-width: 100%;
   max-height: 127%;
+  height: auto;
+  width: auto;
 }
 
 .class__body {
@@ -3030,6 +3032,7 @@ br.responsive {
 
 .teacher__image img {
   border-radius: 20px;
+  height: auto;
 }
 
 .teacher__info {
@@ -3321,19 +3324,19 @@ br.responsive {
 
 @media (max-width: 1920px) {
   .index main {
-    margin-bottom: -123px;
+    margin-bottom: -148px;
   }
 }
 
 @media (max-width: 1536px) {
   .index main {
-    margin-bottom: -140px;
+    margin-bottom: -165px;
   }
 }
 
 @media (max-width: 1440px) {
   .index main {
-    margin-bottom: -150px;
+    margin-bottom: -178px;
   }
 
   .index main {
@@ -3593,7 +3596,7 @@ br.responsive {
 
 @media (max-width: 1100px) {
   .index main {
-    margin-bottom: -170px;
+    margin-bottom: -190px;
   }
 }
 
@@ -3720,7 +3723,7 @@ br.responsive {
   }
 
   .teacher__text {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .teacher__text p:not(:last-child) {
@@ -4478,10 +4481,6 @@ br.responsive {
 }
 
 @media (max-width: 480px) {
-  .index main {
-    padding-bottom: 50px;
-  }
-
   ._error-list {
     margin-left: 9px;
   }
@@ -4510,6 +4509,7 @@ br.responsive {
 
   .swiper-pagination {
     margin: 20px auto;
+    height: 30px;
   }
 
   .swiper-pagination-bullet {
@@ -4517,7 +4517,7 @@ br.responsive {
     text-align: center;
     display: inline-block;
     margin: auto 13px;
-    padding: 10px 0 0 0;
+    vertical-align: middle;
   }
 
   ._single-page .first-screen__breadcrumbs {
@@ -4539,7 +4539,7 @@ br.responsive {
   .pagination__button {
     width: 37px;
     height: 37px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .pagination__button-prev::before,
@@ -4803,20 +4803,20 @@ br.responsive {
   }
 
   .special-events .special-event__date {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .special-events .special-event__title {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .special-events .special-event__location,
   .special-events .special-event__time {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .special-events .special-event__text {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .teachers__slider .swiper-button-next,
